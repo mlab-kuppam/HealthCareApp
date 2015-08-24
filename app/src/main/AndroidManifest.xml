@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.pes.mlab.newhealthcareapp" >
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-feature android:name="android.hardware.camera" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/app_icon"
+        android:label="Welcome"
+        android:screenOrientation="portrait"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".MainActivity"
+            android:label="HealthCare"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".AddActivity"
+            android:label="@string/title_activity_add" >
+        </activity>
+
+        <activity
+            android:name=".SchoolAddActivity"
+            android:label="@string/title_activity_school_add" >
+        </activity>
+
+        <activity
+            android:name=".socioActivity"
+            android:label="@string/title_activity_socio" >
+        </activity>
+
+        <activity
+            android:name=".UpdateActivity"
+            android:label="@string/title_activity_update"
+            android:parentActivityName=".MainActivity" >
+        </activity>
+
+        <activity
+            android:name=".OralActivity"
+            android:label="@string/title_activity_oral">
+        </activity>
+
+        <activity
+            android:name=".EyeActivity"
+            android:label="@string/title_activity_eye" >
+        </activity>
+
+        <activity
+            android:name=".ENTActivity"
+            android:label="@string/title_activity_ent">
+        </activity>
+
+        <activity
+            android:name=".SkinActivity"
+            android:label="@string/title_activity_skin">
+        </activity>
+
+        <activity
+            android:name=".SYS_ONEActivity"
+            android:label="@string/title_activity_sys__one"
+            >
+        </activity>
+
+        <activity
+            android:name=".SYS_twoActivity"
+            android:label="@string/title_activity_sys_two"
+            >
+        </activity>
+
+        <activity
+            android:name=".EyeContActivity"
+            android:label="@string/title_activity_eye_cont"
+            android:screenOrientation="landscape" >
+        </activity>
+
+        <activity
+            android:name=".HealthActivity"
+            android:label="@string/title_activity_health" >
+        </activity>
+    </application>
+
+</manifest>

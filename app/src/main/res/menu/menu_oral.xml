@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.pes.mlab.newhealthcareapp.OralActivity">
+
+
+    <item android:id="@+id/action_oral"
+        android:icon="@drawable/ic_person_add_white_36dp"
+        android:title="Add Student"
+        app:showAsAction="ifRoom"  />
+</menu>

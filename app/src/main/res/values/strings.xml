@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="title_activity_add">STUDENT DETAILS</string>
+    <string name="title_activity_school_add">SCHOOL DETAILS</string>
+    <string name="genInfo1"><b>Name of Mandal:</b></string>
+    <string name="genInfo2"><b>Name of Block:</b></string>
+    <string name="genInfo3"><b>Name of Village:</b></string>
+    <string name="hint1"><i>Enter name of Village</i></string>
+    <string name="genInfo4"><b>Name of School:</b></string>
+    <string name="hint2"><i>Enter name of School</i></string>
+    <string name="genInfo5"><b>Type of School:</b></string>
+    <string name="priv">Private</string>
+    <string name="govern">Government</string>
+    <string name="genInfo6"><b>Catergory:</b></string>
+    <string name="genInfo7"><b>Name of Head master or class teacher:</b></string>
+    <string name="hint3"><i>Enter name of Head master or class teacher</i></string>
+    <string name="genInfo8"><b><u>Contact details of the School:</u></b></string>
+    <string name="genInfo9"><b>Landline:</b></string>
+    <string name="hint4"><i>Enter Landline Number</i></string>
+    <string name="genInfo10"><b>Mobile:</b></string>
+    <string name="hint5"><i>Enter Mobile Number</i></string>
+    <string name="genInfo11"><b>E-mail ID:</b></string>
+    <string name="hint6"><i>Enter E-mail ID</i></string>
+    <string name="genInfo12"><b>Criteria for Healthful School:</b></string>
+    <string name="genInfo13">Met:</string>
+    <string name="genInfo14">Not Met:</string>
+    <string name="hint7"><i>Enter Comments</i></string>
+    <string name="chiIde1"><b>Student ID:</b></string>
+    <string name="cHint1"><i>Enter Student ID</i></string>
+    <string name="chiIde2"><b>Name of the child:</b></string>
+    <string name="cHint2"><i>Enter Student\'s Name</i></string>
+    <string name="chiIde3"><b>Date Of Birth(as per school records):</b></string>
+    <string name="chiIde4"><b>Gender:</b></string>
+    <string name="chiIde5"><b>Standard/Class:</b></string>
+    <string name="chiIde6"><u><b>Parent/Guardians:</b></u></string>
+    <string name="chiIde7"><b>Father\'s Name:</b></string>
+    <string name="chiIde8"><b>Mother\'s Name:</b></string>
+    <string name="chiIde9"><b>Guardian\'s Name:</b></string>
+    <string name="cHint3"><i>Enter Father\'s Name</i></string>
+    <string name="cHint4"><i>Enter Mother\'s Name</i></string>
+    <string name="cHint5"><i>Enter Guardians\'s Name</i></string>
+    <string name="chiIde10"><b>Attendance:</b></string>
+    <string name="cHint6"><i>Enter Attendance</i></string>
+    <string name="chiIde11"><b>Academic Performance or Grade:</b></string>
+    <string name="cHint7"><i>Enter Grade</i></string>
+    <string name="sD1"><b><u>Home Address:</u></b></string>
+    <string name="sD2"><b>Home Number:</b></string>
+    <string name="sD3"><b>Village Name:</b></string>
+    <string name="sD4"><b>Post Office:</b></string>
+    <string name="sD5"><b>Mandal:</b></string>
+    <string name="sHint1"><i>Enter Home Number</i></string>
+    <string name="sHint2"><i>Enter Village Name</i></string>
+    <string name="sHint3"><i>Enter Post Office</i></string>
+    <string name="sD6"><b><u>Home Contact details:</u></b></string>
+    <string name="sD7"><b>Type of Family:</b></string>
+    <string name="sD8"><b>Number of family\n members:</b></string>
+    <string name="sHint4"><i>Enter number of members</i></string>
+    <string name="sD9"><b>Head of the Family:</b></string>
+    <string name="father"><b><u>Father:</u></b></string>
+    <string name="mother"><b><u>Mother:</u></b></string>
+    <string name="sD10"><b>Education \n Qualifications:</b></string>
+    <string name="sD11"><b>Occupation:</b></string>
+    <string name="sD12"><b>Total Income of\n the Family:</b></string>
+    <string name="sHint5"><i>Enter the Total Income</i></string>
+    <string name="sD13"><b>Diet:</b></string>
+    <string name="sD14"><b>Veg</b></string>
+    <string name="sD15"><b>Mixed</b></string>
+    <string name="hA1"><b>Height(cm):</b></string>
+    <string name="hHint1"><i>Enter Height</i></string>
+    <string name="hA2"><b>Weight(kg):</b></string>
+    <string name="hHint2"><i>Enter Weight</i></string>
+    <string name="hA3"><b>Abdominal \n circurference(cm):</b></string>
+    <string name="hHint3"><i>Enter circumference</i></string>
+    <string name="hA4"><b>Waist\n circurference(cm):</b></string>
+    <string name="hA5"><b>Pallor:</b></string>
+    <string name="hA6"><b>Pulse Rate\n(beats per minute):</b></string>
+    <string name="hHint4"><i>Enter Pulse rate</i></string>
+    <string name="hA7"><b>Respiratory Rate\n(breaths per minute):</b></string>
+    <string name="hHint5"><i>Enter Respiratory rate</i></string>
+    <string name="hA8"><b><u>Blood Pressure(mm Hg):</u></b></string>
+    <string name="hA9"><b>Systole:</b></string>
+    <string name="hA10"><b>Diastole:</b></string>
+    <string name="hA11"><b><u>Personal Hygiene:</u></b></string>
+    <string name="hA12"><b>Nails:</b></string>
+    <string name="hA13"><b>Bathing:</b></string>
+    <string name="hA14"><b>Grooming:</b></string>
+    <string name="hA15"><b>Oral Care:</b></string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="good">Good</string>
+    <string name="poor">Poor</string>
+    <string name="o1">Male</string>
+    <string name="o2">Female</string>
+    <string name="o3">Other</string>
+
+    <string-array name="mandal">
+        <item>Select..</item>
+        <item>Venkatagiri Kota</item>
+        <item>Rama Kuppam</item>
+        <item>Santhipuram</item>
+        <item>Gudipalle</item>
+        <item>Kuppam</item>
+    </string-array>
+    <string-array name="vgiri">
+        <item>Select..</item>
+        <item>I</item>
+        <item>II</item>
+    </string-array>
+    <string-array name="rk">
+        <item>Select..</item>
+        <item>II</item>
+        <item>III</item>
+    </string-array>
+    <string-array name="sp">
+        <item>Select..</item>
+        <item>III</item>
+        <item>IIII</item>
+    </string-array>
+    <string-array name="gp">
+        <item>Select..</item>
+        <item>IIII</item>
+        <item>IIIII</item>
+    </string-array>
+    <string-array name="k">
+        <item>Select..</item>
+        <item>IIIII</item>
+        <item>IIIIII</item>
+    </string-array>
+    <string-array name="catergories">
+        <item>Select..</item>
+        <item>Primary School</item>
+        <item>Higher Primary School</item>
+        <item>High School</item>
+    </string-array>
+    <string-array name="standard">
+        <item>Select..</item>
+        <item>I</item>
+        <item>II</item>
+        <item>III</item>
+        <item>IV</item>
+        <item>V</item>
+        <item>VI</item>
+        <item>VII</item>
+        <item>VIII</item>
+        <item>IX</item>
+        <item>X</item>
+    </string-array>
+    <string-array name="famiyType">
+        <item>Select..</item>
+        <item>Nuclear</item>
+        <item>Three Generational</item>
+        <item>Joint</item>
+    </string-array>
+    <string-array name="famiyHead">
+        <item>Select..</item>
+        <item>Grandparent</item>
+        <item>Parent</item>
+        <item>Gaurdian</item>
+    </string-array>
+    <string-array name="education">
+        <item>Select..</item>
+        <item>8th Pass</item>
+        <item>SSLC</item>
+        <item>PUC</item>
+        <item>Undergraduate</item>
+        <item>others</item>
+    </string-array>
+    <string-array name="occupation">
+        <item>Select..</item>
+        <item>Farmer</item>
+        <item>Field Worker</item>
+        <item>one more</item>
+        <item>Another</item>
+        <item>maybe another</item>
+    </string-array>
+    <string-array name="income">
+        <item>Select..</item>
+        <item>below Rs.1000</item>
+        <item>Rs.1000 - Rs. 5000</item>
+        <item>Rs.5000 - Rs. 10000</item>
+    </string-array>
+
+    <string name="title_activity_socio">Socio Demographic Details</string>
+    <string name="sD16"><b>Aadhar Number:</b></string>
+    <string name="sHint6"><i>Enter number</i></string>
+    <string name="sD17"><b>Socio-economic class:</b></string>
+
+    <string-array name="socio">
+        <item>Select..</item>
+        <item>I</item>
+        <item>II</item>
+        <item>III</item>
+        <item>IV</item>
+        <item>V</item>
+    </string-array>
+
+    <string name="sD18"><b>Housing standards:</b></string>
+    <string name="sD19">Healthful:</string>
+    <string name="sD20">Not Healthful:</string>
+    <string name="sHint7"><i>Enter Comment</i></string>
+    <string name="sD21"><b>Place of treatment in \ncase of illness:</b></string>
+    <string name="sHint8"><i>Enter place</i></string>
+    <string name="trimmed">Trimmed</string>
+    <string name="Ntrimmed">Not Trimmed</string>
+    <string name="regular">Regular</string>
+    <string name="irregular">Irregular</string>
+    <string name="title_activity_ear">ear</string>
+    <string name="e1"><b>Otitis externa:</b></string>
+    <string name="e2"><b>ASOM:</b></string>
+    <string name="e3"><b>CSOM:</b></string>
+    <string name="e4"><b>Impacted wax:</b></string>
+    <string name="e5"><b>Impaired hearing:</b></string>
+    <string name="e6"><b>Epistaxis:</b></string>
+    <string name="e7"><b>Adenotonsilitis:</b></string>
+    <string name="e8"><b>Pharyngitis:</b></string>
+    <string name="e9"><b>Allergic rhinitis:</b></string>
+    <string name="e10"><b>Speech Defects:</b></string>
+    <string name="e11"><b>Additional Information:</b></string>
+    <string name="left"><b>Left</b></string>
+    <string name="right"><b>Right</b></string>
+    <string name="SA2TB1"><b><u>Nervous System:</u></b></string>
+    <string name="SA2TB2"><b>Epilepsy:</b></string>
+    <string name="SA2TB3"><b><u>Behavioural problems:</u></b></string>
+    <string name="SA2TB4"><b><u>Genitourinary system:</u></b></string>
+    <string name="SA2TB5"><b>UTI:</b></string>
+    <string name="SA2TB6"><b><u>Vitamin Deficiency:</u></b></string>
+    <string name="SA2TB7"><b>Vit C deficiency:</b></string>
+    <string name="SA2TB8"><b>Vitamin B complex deficiency:</b></string>
+    <string name="SA2TB9"><b><u>Other Infectious diseases:</u></b></string>
+    <string name="SA2TB10"><b><u>Injuries:</u></b></string>
+    <string name="ORTB1"><b><u>Clinical Anaemia:</u></b></string>
+    <string name="ORTB2"><b><u>Oral Examination:</u></b></string>
+    <string name="ORTB3"><b>Dental Caries:</b></string>
+    <string name="ORTB4"><b>Fluorosis:</b></string>
+    <string name="ORTB5"><b>Gingivitis:</b></string>
+    <string name="ORTB6"><b>Oral ulcers &amp; periapical \nabscess:</b></string>
+    <string name="ORTB7"><b>Developmental Abnormality:</b></string>
+    <string name="ORTB8"><b>Additional information:</b></string>
+    <string name="Eyedetails"><b>Click to enter the Eye Details</b></string>
+    <string name="Referr"><b>Refractive erors:</b></string>
+    <string name="Myopia"><b>Myopia:</b></string>
+    <string name="Left"><b>Left</b></string>
+    <string name="Right"><b>Right</b></string>
+    <string name="Hyper"><b>Hypermetropia:</b></string>
+    <string name="Astig"><b>Astigmatism:</b></string>
+    <string name="Anis"><b>Anisometropia:</b></string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="Cvis"><b>Colour vision :</b></string>
+    <string name="bit"><b>Bitot\'s spots:</b></string>
+    <string name="amblyopia"><b>Ambyopia (concomitant sqint):</b></string>
+    <string name="night"><b>Night blindness:</b></string>
+    <string name="nystagmus"><b>Nystagmus (abnormal macular fixation):</b></string>
+    <string name="cong"><b>Congenital ptosis:</b></string>
+    <string name="congdev"><b>Congenital Development cataract:</b></string>
+    <string name="Allergy"><b>Allergic Conjunctivitis (vernal catarrh):</b></string>
+    <string name="Vistest"><b><u>Vision Testing:</u></b></string>
+    <string name="Scabies"><b>Scabies:</b></string>
+    <string name="scabhint"><I><b>Enter your Observation</b></I></string>
+    <string name="Pytalba"><b>Pityriasis Alba:</b></string>
+    <string name="Pderma"><b>Phrynoderma:</b></string>
+    <string name="Peculosis"><b>Pediculosis:</b></string>
+    <string name="Pcolour"><b>Pityriasis versicolor:</b></string>
+    <string name="Mil"><b>Miliaria:</b></string>
+    <string name="Imp"><b>Impetigo:</b></string>
+    <string name="Papcaria"><b>Papular urticaria:</b></string>
+    <string name="Tin"><b>Tinea curis/corporis:</b></string>
+    <string name="Viral"><b>Viral warts:</b></string>
+    <string name="Others"><b>Additional Information:</b></string>
+    <string name="SA1TB1"><b><u>Respiratory System:</u></b></string>
+    <string name="SA1TB2"><b>URTI:</b></string>
+    <string name="SA1TB3"><b>LRTI:</b></string>
+    <string name="SA1TB4"><b>Bronchial Asthma:</b></string>
+    <string name="SA1TB5"><b><u>Cardiovascular System:</u></b></string>
+    <string name="SA1TB6"><b><u>GastroIntestinal System:</u></b></string>
+    <string name="SA1TB7"><b>Acute Gastro enteritis:</b></string>
+    <string name="SA1TB8"><b>Worm Infestation:</b></string>
+    <string name="SA1TB9"><b><u>Musculoskeletal System:</u></b></string>
+    <string name="SA1TB10"><b>Deformaties:</b></string>
+    <string name="SA1TB11"><b>Vitamin D Deficiency:</b></string>
+    <string name="Add"><b>Additional Information:</b></string>
+    <string name="oth"><b>Others:</b></string>
+    <string name="title_activity_update">Options</string>
+    <string name="title_activity_oral">OralActivity</string>
+    <string name="title_activity_eye">EyeActivity</string>
+    <string name="title_activity_ent">ENTActivity</string>
+    <string name="title_activity_skin">SkinActivity</string>
+    <string name="title_activity_sys__one">SYS_ONEActivity</string>
+    <string name="title_activity_sys_two">SYS_twoActivity</string>
+    <string name="title_activity_eye_cont">EyeContActivity</string>
+    <string name="title_activity_health">HealthActivity</string>
+
+</resources>

@@ -1,0 +1,870 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="healthcare.healthcare2.ear">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginLeft="20dp">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/e1"
+                android:textColor="#ff000000"
+                android:textSize="18dp" />
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="110dp"
+                    android:layout_marginTop="18dp"
+                    android:text="@string/left"
+                    android:textColor="#ff000000"
+                    android:textSize="17dp" />
+
+                <RadioGroup
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="40dp"
+                    android:onClick="earClick"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/e1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="40dp"
+                        android:layout_weight="1"
+                        android:onClick="earClick"
+                        android:text="@string/yes"
+                        android:textSize="16dp" />
+
+                    <RadioButton
+                        android:id="@+id/e2"
+                        android:onClick="earClick"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/no"
+                        android:textSize="16dp" />
+
+                </RadioGroup>
+
+                <EditText
+                    android:id="@+id/eT1"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="70dp" 
+                    android:textSize="16dp"
+                    android:visibility="gone" />
+
+                <View
+                    style="@style/Delimiter"
+                    android:layout_marginLeft="280dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="403dp"
+                    android:layout_marginTop="18dp"
+                    android:text="@string/right"
+                    android:textColor="#ff000000"
+                    android:textSize="17dp" />
+
+                <RadioGroup
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="300dp"
+                    android:layout_marginTop="40dp"
+                    android:onClick="earClick"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/e3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="40dp"
+                        android:layout_weight="1"
+                        android:onClick="earClick"
+                        android:text="@string/yes"
+                        android:textSize="16dp" />
+
+                    <RadioButton
+                        android:id="@+id/e4"
+                        android:layout_width="wrap_content"
+                        android:onClick="earClick"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/no"
+                        android:textSize="16dp" />
+
+                </RadioGroup>
+
+                <EditText
+                    android:id="@+id/eT2"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="300dp"
+                    android:layout_marginTop="70dp" 
+                    android:textSize="16dp"
+                    android:visibility="gone" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/e2"
+                android:textColor="#ff000000"
+                android:textSize="18dp" />
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="110dp"
+                    android:layout_marginTop="18dp"
+                    android:text="@string/left"
+                    android:textColor="#ff000000"
+                    android:textSize="17dp" />
+
+                <RadioGroup
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="40dp"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/e5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="40dp"
+                        android:layout_weight="1"
+                        android:onClick="earClick"
+                        android:text="@string/yes"
+                        android:textSize="16dp" />
+
+                    <RadioButton
+                        android:id="@+id/e6"
+                        android:layout_width="wrap_content"
+                        android:onClick="earClick"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/no"
+                        android:textSize="16dp" />
+
+                </RadioGroup>
+
+                <EditText
+                    android:id="@+id/eT3"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="70dp" 
+                    android:textSize="16dp"
+                    android:visibility="gone" />
+
+                <View
+                    style="@style/Delimiter"
+                    android:layout_marginLeft="280dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="403dp"
+                    android:layout_marginTop="18dp"
+                    android:text="@string/right"
+                    android:textColor="#ff000000"
+                    android:textSize="17dp" />
+
+                <RadioGroup
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="300dp"
+                    android:layout_marginTop="40dp"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/e7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="40dp"
+                        android:layout_weight="1"
+                        android:onClick="earClick"
+                        android:text="@string/yes"
+                        android:textSize="16dp" />
+
+                    <RadioButton
+                        android:id="@+id/e8"
+                        android:layout_width="wrap_content"
+                        android:onClick="earClick"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/no"
+                        android:textSize="16dp" />
+
+                </RadioGroup>
+
+                <EditText
+                    android:id="@+id/eT4"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="300dp"
+                    android:layout_marginTop="70dp" 
+                    android:textSize="16dp"
+                    android:visibility="gone" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/e3"
+                android:textColor="#ff000000"
+                android:textSize="18dp" />
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="110dp"
+                    android:layout_marginTop="18dp"
+                    android:text="@string/left"
+                    android:textColor="#ff000000"
+                    android:textSize="17dp" />
+
+                <RadioGroup
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="40dp"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/e9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="40dp"
+                        android:layout_weight="1"
+                        android:text="@string/yes"
+                        android:onClick="earClick"
+                        android:textSize="16dp" />
+
+                    <RadioButton
+                        android:id="@+id/e10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="earClick"
+                        android:layout_weight="1"
+                        android:text="@string/no"
+                        android:textSize="16dp" />
+
+                </RadioGroup>
+
+                <EditText
+                    android:id="@+id/eT5"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="70dp" 
+                    android:textSize="16dp"
+                    android:visibility="gone" />
+
+                <View
+                    style="@style/Delimiter"
+                    android:layout_marginLeft="280dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="403dp"
+                    android:layout_marginTop="18dp"
+                    android:text="@string/right"
+                    android:textColor="#ff000000"
+                    android:textSize="17dp" />
+
+                <RadioGroup
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="300dp"
+                    android:layout_marginTop="40dp"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/e11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="40dp"
+                        android:layout_weight="1"
+                        android:onClick="earClick"
+                        android:text="@string/yes"
+                        android:textSize="16dp" />
+
+                    <RadioButton
+                        android:id="@+id/e12"
+                        android:layout_width="wrap_content"
+                        android:onClick="earClick"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/no"
+                        android:textSize="16dp" />
+
+                </RadioGroup>
+
+                <EditText
+                    android:id="@+id/eT6"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="300dp"
+                    android:layout_marginTop="70dp" 
+                    android:textSize="16dp"
+                    android:visibility="gone" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/e4"
+                android:textColor="#ff000000"
+                android:textSize="18dp" />
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="110dp"
+                    android:layout_marginTop="18dp"
+                    android:text="@string/left"
+                    android:textColor="#ff000000"
+                    android:textSize="17dp" />
+
+                <RadioGroup
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="40dp"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/e13"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="40dp"
+                        android:layout_weight="1"
+                        android:onClick="earClick"
+                        android:text="@string/yes"
+                        android:textSize="16dp" />
+
+                    <RadioButton
+                        android:id="@+id/e14"
+                        android:layout_width="wrap_content"
+                        android:onClick="earClick"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/no"
+                        android:textSize="16dp" />
+
+                </RadioGroup>
+
+                <EditText
+                    android:id="@+id/eT7"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="70dp" 
+                    android:textSize="16dp"
+                    android:visibility="gone" />
+
+                <View
+                    style="@style/Delimiter"
+                    android:layout_marginLeft="280dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="403dp"
+                    android:layout_marginTop="18dp"
+                    android:text="@string/right"
+                    android:textColor="#ff000000"
+                    android:textSize="17dp" />
+
+                <RadioGroup
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="300dp"
+                    android:layout_marginTop="40dp"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/e15"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="40dp"
+                        android:onClick="earClick"
+                        android:layout_weight="1"
+                        android:text="@string/yes"
+                        android:textSize="16dp" />
+
+                    <RadioButton
+                        android:id="@+id/e16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="earClick"
+                        android:layout_weight="1"
+                        android:text="@string/no"
+                        android:textSize="16dp" />
+
+                </RadioGroup>
+
+                <EditText
+                    android:id="@+id/eT8"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="300dp"
+                    android:layout_marginTop="70dp" 
+                    android:textSize="16dp"
+                    android:visibility="gone" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/e5"
+                android:textColor="#ff000000"
+                android:textSize="18dp" />
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="110dp"
+                    android:layout_marginTop="18dp"
+                    android:text="@string/left"
+                    android:textColor="#ff000000"
+                    android:textSize="17dp" />
+
+                <RadioGroup
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="40dp"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/e17"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="40dp"
+                        android:layout_weight="1"
+                        android:onClick="earClick"
+                        android:text="@string/yes"
+                        android:textSize="16dp" />
+
+                    <RadioButton
+                        android:id="@+id/e18"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:onClick="earClick"
+                        android:text="@string/no"
+                        android:textSize="16dp" />
+
+                </RadioGroup>
+
+                <EditText
+                    android:id="@+id/eT9"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="70dp" 
+                    android:textSize="16dp"
+                    android:visibility="gone" />
+
+                <View
+                    style="@style/Delimiter"
+                    android:layout_marginLeft="280dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="403dp"
+                    android:layout_marginTop="18dp"
+                    android:text="@string/right"
+                    android:textColor="#ff000000"
+                    android:textSize="17dp" />
+
+                <RadioGroup
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="300dp"
+                    android:layout_marginTop="40dp"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/e19"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="40dp"
+                        android:layout_weight="1"
+                        android:onClick="earClick"
+                        android:text="@string/yes"
+                        android:textSize="16dp" />
+
+                    <RadioButton
+                        android:id="@+id/e20"
+                        android:layout_width="wrap_content"
+                        android:onClick="earClick"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/no"
+                        android:textSize="16dp" />
+
+                </RadioGroup>
+
+                <EditText
+                    android:id="@+id/eT10"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="300dp"
+                    android:layout_marginTop="70dp" 
+                    android:textSize="16dp"
+                    android:visibility="gone" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e6"
+                    android:textColor="#ff000000"
+                    android:textSize="18dp" />
+
+                <RadioGroup
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/e21"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:checked="false"
+                        android:onClick="earClick"
+                        android:text="@string/yes"
+                        android:textSize="16dp" />
+
+                    <RadioButton
+                        android:id="@+id/e22"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="earClick"
+                        android:layout_weight="1"
+                        android:checked="false"
+                        android:text="@string/no"
+                        android:textSize="16dp" />
+
+                </RadioGroup>
+            </RelativeLayout>
+
+            <EditText
+                android:id="@+id/epiCom"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:hint="@string/sHint7"
+                android:inputType="textMultiLine"
+                android:textSize="16dp"
+                android:visibility="gone" />
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e7"
+                    android:textColor="#ff000000"
+                    android:textSize="18dp" />
+
+                <RadioGroup
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/e23"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:checked="false"
+                        android:onClick="earClick"
+                        android:text="@string/yes"
+                        android:textSize="16dp" />
+
+                    <RadioButton
+                        android:id="@+id/e24"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="earClick"
+                        android:layout_weight="1"
+                        android:checked="false"
+                        android:text="@string/no"
+                        android:textSize="16dp" />
+
+                </RadioGroup>
+            </RelativeLayout>
+
+            <EditText
+                android:id="@+id/adeCom"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:hint="@string/sHint7"
+                android:inputType="textMultiLine"
+                android:textSize="16dp"
+                android:visibility="gone" />
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e8"
+                    android:textColor="#ff000000"
+                    android:textSize="18dp" />
+
+                <RadioGroup
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/e25"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:onClick="earClick"
+                        android:checked="false"
+                        android:text="@string/yes"
+                        android:textSize="16dp" />
+
+                    <RadioButton
+                        android:id="@+id/e26"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="earClick"
+                        android:layout_weight="1"
+                        android:checked="false"
+                        android:text="@string/no"
+                        android:textSize="16dp" />
+
+                </RadioGroup>
+            </RelativeLayout>
+
+            <EditText
+                android:id="@+id/phCom"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:hint="@string/sHint7"
+                android:inputType="textMultiLine"
+                android:textSize="16dp"
+                android:visibility="gone" />
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e9"
+                    android:textColor="#ff000000"
+                    android:textSize="18dp" />
+
+                <RadioGroup
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/e27"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:checked="false"
+                        android:onClick="earClick"
+                        android:text="@string/yes"
+                        android:textSize="16dp" />
+
+                    <RadioButton
+                        android:id="@+id/e28"
+                        android:layout_width="wrap_content"
+                        android:onClick="earClick"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:checked="false"
+                        android:text="@string/no"
+                        android:textSize="16dp" />
+
+                </RadioGroup>
+            </RelativeLayout>
+
+            <EditText
+                android:id="@+id/rhiCom"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:hint="@string/sHint7"
+                android:inputType="textMultiLine"
+                android:textSize="16dp"
+                android:visibility="gone" />
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e10"
+                    android:textColor="#ff000000"
+                    android:textSize="18dp" />
+
+                <RadioGroup
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/e29"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:onClick="earClick"
+                        android:checked="false"
+                        android:text="@string/yes"
+                        android:textSize="16dp" />
+
+                    <RadioButton
+                        android:id="@+id/e30"
+                        android:layout_width="wrap_content"
+                        android:onClick="earClick"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:checked="false"
+                        android:text="@string/no"
+                        android:textSize="16dp" />
+
+                </RadioGroup>
+            </RelativeLayout>
+
+            <EditText
+                android:id="@+id/speechCom"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:hint="@string/sHint7"
+                android:inputType="textMultiLine"
+                android:textSize="16dp"
+                android:visibility="gone" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/e11"
+                android:textColor="#ff000000"
+                android:textSize="18dp" />
+
+            <EditText
+                android:id="@+id/addInfo"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/sHint7"
+                android:inputType="textMultiLine"
+                android:textSize="16dp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>
+

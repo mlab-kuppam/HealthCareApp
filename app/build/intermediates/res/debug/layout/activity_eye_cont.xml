@@ -1,0 +1,609 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context="com.example.abc.eye.Ear"
+    android:clickable="true"
+    android:background="#ffffffff">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Vision Testing"
+                    android:layout_marginLeft="30dp"
+                    android:textSize="18dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Right"
+                    android:layout_marginLeft="350dp"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Left"
+                    android:layout_marginLeft="665dp"
+                    android:textSize="18dp"/>
+
+            </RelativeLayout>
+
+            <View
+                android:layout_marginTop="16dp"
+                style="@style/Divider"/>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <View
+                            style="@style/Separator"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Distance"
+                            android:layout_marginLeft="60dp"
+                            android:layout_marginTop="20dp"
+                            android:textSize="18dp"/>
+
+                        <View
+                            android:layout_marginLeft="80dp"
+                            style="@style/Separator"/>
+
+                        <NumberPicker
+                            android:layout_width="wrap_content"
+                            android:layout_height="120dp"
+                            android:layout_marginLeft="48dp"
+                            android:id="@+id/numberPicker1" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="/"
+                            android:textSize="60dp"
+                            android:layout_marginLeft="25dp"
+                            android:layout_marginTop="15dp"/>
+
+                        <NumberPicker
+                            android:layout_width="wrap_content"
+                            android:layout_height="120dp"
+                            android:layout_marginLeft="25dp"
+                            android:id="@+id/numberPicker2" />
+
+
+
+                        <View
+                            android:layout_marginLeft="48dp"
+                            style="@style/Separator"/>
+
+                        <NumberPicker
+                            android:layout_width="wrap_content"
+                            android:layout_height="120dp"
+                            android:layout_marginLeft="57dp"
+                            android:id="@+id/numberPicker3" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="/"
+                            android:textSize="60dp"
+                            android:layout_marginLeft="25dp"
+                            android:layout_marginTop="15dp"/>
+
+                        <NumberPicker
+                            android:layout_width="wrap_content"
+                            android:layout_height="120dp"
+                            android:layout_marginLeft="25dp"
+                            android:id="@+id/numberPicker4" />
+                        <View
+                            android:layout_marginLeft="57dp"
+                            style="@style/Separator"/>
+
+                    </TableRow>
+
+                    <View
+                        style="@style/Divider"/>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <View
+                            style="@style/Separator"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Near"
+                            android:layout_marginLeft="60dp"
+                            android:layout_marginTop="20dp"
+                            android:textSize="18dp"/>
+
+                        <View
+                            android:layout_marginLeft="80dp"
+                            style="@style/Separator"/>
+
+                        <NumberPicker
+                            android:layout_width="wrap_content"
+                            android:layout_height="120dp"
+                            android:layout_marginLeft="48dp"
+                            android:id="@+id/numberPicker5" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="/"
+                            android:textSize="60dp"
+                            android:layout_marginLeft="25dp"
+                            android:layout_marginTop="15dp"/>
+
+                        <NumberPicker
+                            android:layout_width="wrap_content"
+                            android:layout_height="120dp"
+                            android:layout_marginLeft="25dp"
+                            android:id="@+id/numberPicker6" />
+
+
+
+                        <View
+                            android:layout_marginLeft="48dp"
+                            style="@style/Separator"/>
+
+                        <NumberPicker
+                            android:layout_width="wrap_content"
+                            android:layout_height="120dp"
+                            android:layout_marginLeft="57dp"
+                            android:id="@+id/numberPicker7" />>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="/"
+                            android:textSize="60dp"
+                            android:layout_marginLeft="25dp"
+                            android:layout_marginTop="15dp"/>
+
+                        <NumberPicker
+                            android:layout_width="wrap_content"
+                            android:layout_height="120dp"
+                            android:layout_marginLeft="25dp"
+                            android:id="@+id/numberPicker8" />
+
+                        <View
+                            android:layout_marginLeft="57dp"
+                            style="@style/Separator"/>
+
+                    </TableRow>
+
+
+
+                </TableLayout>
+            </RelativeLayout>
+
+
+            <View
+                style="@style/Divider"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Is There Any Refractive Errors?"
+                    android:layout_marginLeft="30dp"
+                    android:textSize="18dp"/>
+
+
+                <RadioGroup
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="400dp"
+                    >
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:onClick="OnRadioSelected"
+                        android:id="@+id/RB1"
+                        android:text="Yes" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="15dp"
+                        android:onClick="OnRadioSelected"
+                        android:id="@+id/RB2"
+                        android:text="No" />
+
+                </RadioGroup>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="60dp"
+                android:id="@+id/R1"
+                android:visibility="gone"
+                xmlns:android="http://schemas.android.com/apk/res/android">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Refraction and correction"
+                        android:layout_marginLeft="0dp"
+                        android:textSize="18dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/Left"
+                        android:layout_marginTop="60dp"
+                        android:layout_marginLeft="305dp"
+                        android:textSize="18dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/Right"
+                        android:layout_marginTop="60dp"
+                        android:layout_marginLeft="640dp"
+                        android:textSize="18dp"/>
+
+
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_marginTop="100dp"
+                    style="@style/Divider"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="80dp">
+
+
+                    <TableLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="20dp">
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <View
+                                style="@style/Separator"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="20dp"
+                                android:textSize="18dp"/>
+
+                            <View
+                                android:layout_marginLeft="30dp"
+                                style="@style/Separator"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Spherical"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginTop="20dp"
+                                android:textSize="18dp"/>
+
+                            <View
+                                android:layout_marginLeft="20dp"
+                                style="@style/Separator"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Cylindrical"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginTop="20dp"
+                                android:textSize="18dp"/>
+
+                            <View
+                                android:layout_marginLeft="20dp"
+                                style="@style/Separator"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Axis"
+                                android:layout_marginLeft="23dp"
+                                android:layout_marginTop="20dp"
+                                android:textSize="18dp"/>
+
+                            <View
+                                android:layout_marginLeft="25dp"
+                                style="@style/Separator"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="20dp"
+                                android:textSize="18dp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Spherical"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginTop="20dp"
+                                android:textSize="18dp"/>
+
+                            <View
+                                android:layout_marginLeft="20dp"
+                                style="@style/Separator"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Cylindrical"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginTop="20dp"
+                                android:textSize="18dp"/>
+
+                            <View
+                                android:layout_marginLeft="20dp"
+                                style="@style/Separator"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Axis"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginTop="20dp"
+                                android:textSize="18dp"/>
+
+                            <View
+                                android:layout_marginLeft="21dp"
+                                style="@style/Separator"/>
+
+                        </TableRow>
+
+                        <View
+                            style="@style/Divider"/>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <View
+                                style="@style/Separator"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Distance"
+                                android:layout_marginLeft="30dp"
+                                android:layout_marginTop="20dp"
+                                android:textSize="18dp"/>
+
+                            <View
+                                android:layout_marginLeft="30dp"
+                                style="@style/Separator"/>
+
+                            <NumberPicker
+                                android:layout_width="70dp"
+                                android:layout_height="120dp"
+                                android:layout_marginLeft="20dp"
+                                android:id="@+id/numberPicker9" />
+
+                            <View
+                                android:layout_marginLeft="20dp"
+                                style="@style/Separator"/>
+
+                            <NumberPicker
+                                android:layout_width="50dp"
+                                android:layout_height="120dp"
+                                android:layout_marginLeft="20dp"
+                                android:id="@+id/numberPicker10" />
+
+                            <View
+                                android:layout_marginLeft="20dp"
+                                style="@style/Separator"/>
+
+                            <NumberPicker
+                                android:layout_width="60dp"
+                                android:layout_height="120dp"
+                                android:layout_marginLeft="20dp"
+                                android:id="@+id/numberPicker11" />
+
+                            <View
+                                android:layout_marginLeft="25dp"
+                                style="@style/Separator"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="20dp"
+                                android:textSize="18dp"/>
+
+                            <NumberPicker
+                                android:layout_width="70dp"
+                                android:layout_height="120dp"
+                                android:layout_marginLeft="20dp"
+                                android:id="@+id/numberPicker12" />
+
+                            <View
+                                android:layout_marginLeft="20dp"
+                                style="@style/Separator"/>
+
+                            <NumberPicker
+                                android:layout_width="50dp"
+                                android:layout_height="120dp"
+                                android:layout_marginLeft="20dp"
+                                android:id="@+id/numberPicker14" />
+
+                            <View
+                                android:layout_marginLeft="20dp"
+                                style="@style/Separator"/>
+
+                            <NumberPicker
+                                android:layout_width="60dp"
+                                android:layout_height="120dp"
+                                android:layout_marginLeft="20dp"
+                                android:id="@+id/numberPicker15" />
+
+                            <View
+                                android:layout_marginLeft="21dp"
+                                style="@style/Separator"/>
+
+
+
+                        </TableRow>
+
+                        <View
+                            style="@style/Divider"/>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <View
+                                style="@style/Separator"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Near"
+                                android:layout_marginLeft="30dp"
+                                android:layout_marginTop="20dp"
+                                android:textSize="18dp"/>
+
+                            <View
+                                android:layout_marginLeft="30dp"
+                                style="@style/Separator"/>
+                            <NumberPicker
+                                android:layout_width="70dp"
+                                android:layout_height="120dp"
+                                android:layout_marginLeft="20dp"
+                                android:id="@+id/numberPicker16" />
+
+                            <View
+                                android:layout_marginLeft="20dp"
+                                style="@style/Separator"/>
+
+                            <NumberPicker
+                                android:layout_width="50dp"
+                                android:layout_height="120dp"
+                                android:layout_marginLeft="20dp"
+                                android:id="@+id/numberPicker17" />
+
+                            <View
+                                android:layout_marginLeft="20dp"
+                                style="@style/Separator"/>
+
+                            <NumberPicker
+                                android:layout_width="60dp"
+                                android:layout_height="120dp"
+                                android:layout_marginLeft="20dp"
+                                android:id="@+id/numberPicker18" />
+
+                            <View
+                                android:layout_marginLeft="25dp"
+                                style="@style/Separator"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="20dp"
+                                android:textSize="18dp"/>
+
+                            <NumberPicker
+                                android:layout_width="70dp"
+                                android:layout_height="120dp"
+                                android:layout_marginLeft="20dp"
+                                android:id="@+id/numberPicker19" />
+
+                            <View
+                                android:layout_marginLeft="20dp"
+                                style="@style/Separator"/>
+
+                            <NumberPicker
+                                android:layout_width="50dp"
+                                android:layout_height="120dp"
+                                android:layout_marginLeft="20dp"
+                                android:id="@+id/numberPicker20" />
+
+                            <View
+                                android:layout_marginLeft="20dp"
+                                style="@style/Separator"/>
+
+                            <NumberPicker
+                                android:layout_width="60dp"
+                                android:layout_height="120dp"
+                                android:layout_marginLeft="20dp"
+                                android:id="@+id/numberPicker21" />
+
+                            <View
+                                android:layout_marginLeft="21dp"
+                                style="@style/Separator"/>
+
+                        </TableRow>
+
+                        <View
+                            style="@style/Divider"/>
+
+                    </TableLayout>
+                </RelativeLayout>
+
+
+
+            </RelativeLayout>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="40dp"
+                android:layout_marginLeft="370dp"
+                android:text="ENTER"
+                android:onClick="NEXTEYE"
+                android:id="@+id/btn1"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
+<!-- From: file:/F:/NewHealthCareApp/app/src/main/res/layout/activity_eye_cont.xml -->

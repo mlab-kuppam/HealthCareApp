@@ -1,0 +1,5 @@
+F:\NewHealthCareApp\app\build\intermediates\classes\debug
+F:\NewHealthCareApp\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.3-f64be48e077a55bbb1d9026205bdd075ecad6a76.jar
+F:\NewHealthCareApp\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-ee8cfc70115d82ea3f338593b59d7b4dba46c3b8.jar
+F:\NewHealthCareApp\app\build\intermediates\pre-dexed\debug\classes-fb7c722b3dbbd9f634235a61398a85a5a7660a58.jar
+F:\NewHealthCareApp\app\build\intermediates\pre-dexed\debug\classes-2d4be81fc5014dcfb35801b2386656d83259ad7f.jar
