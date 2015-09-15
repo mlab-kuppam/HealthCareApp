@@ -13,20 +13,13 @@
         android:id="@+id/scrollView"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_marginLeft="20dp">
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp">
 
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="Systemic Analysis 2:"
-                android:textColor="#ff000000"
-                android:textSize="19dp"
-                android:textStyle="bold" />
 
             <RelativeLayout
                 android:layout_width="fill_parent"
@@ -60,7 +53,7 @@
 
                 <RadioGroup
                     android:id="@+id/radioGroup1"
-                    android:layout_width="300dp"
+                    android:layout_width="250dp"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
@@ -103,6 +96,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
+                android:hint="@string/sHint7"
                 android:inputType="textMultiLine"
                 android:textSize="16dp"
                 android:textStyle="italic"
@@ -129,6 +123,7 @@
                     android:layout_height="match_parent"
                     android:layout_marginLeft="60dp"
                     android:layout_toRightOf="@id/text1"
+                    android:hint="@string/sHint7"
                     android:inputType="textMultiLine"
                     android:textSize="16dp"
                     android:textStyle="italic" />
@@ -193,6 +188,7 @@
                 android:id="@+id/SA2EB3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:hint="@string/sHint7"
                 android:inputType="textMultiLine"
                 android:textSize="16dp"
                 android:textStyle="italic"
@@ -225,7 +221,7 @@
 
                 <RadioGroup
                     android:id="@+id/radioGroup3"
-                    android:layout_width="300dp"
+                    android:layout_width="250dp"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
@@ -268,6 +264,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
+                android:hint="@string/sHint7"
                 android:inputType="textMultiLine"
                 android:textSize="16dp"
                 android:textStyle="italic"
@@ -292,6 +289,7 @@
                     android:id="@+id/SA2EB5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:hint="@string/sHint7"
                     android:layout_marginLeft="60dp"
                     android:layout_toRightOf="@id/text2"
                     android:inputType="textMultiLine"
@@ -329,7 +327,7 @@
 
                 <RadioGroup
                     android:id="@+id/radioGroup"
-                    android:layout_width="300dp"
+                    android:layout_width="250dp"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
@@ -363,6 +361,7 @@
                 android:id="@+id/SA2EB6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:hint="@string/sHint7"
                 android:inputType="textMultiLine"
                 android:textSize="16dp"
                 android:textStyle="italic"
@@ -384,7 +383,7 @@
 
                 <RadioGroup
                     android:id="@+id/radioGroup2"
-                    android:layout_width="300dp"
+                    android:layout_width="250dp"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
@@ -419,6 +418,7 @@
                 android:id="@+id/SA2EB7"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:hint="@string/sHint7"
                 android:inputType="textMultiLine"
                 android:textSize="16dp"
                 android:textStyle="italic"
@@ -479,6 +479,7 @@
                 android:id="@+id/SA2EB8"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:hint="@string/sHint7"
                 android:inputType="textMultiLine"
                 android:textSize="16dp"
                 android:textStyle="italic"
@@ -503,9 +504,6 @@
                 <RadioGroup
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentTop="true"
                     android:orientation="horizontal">
 
 
@@ -541,6 +539,7 @@
                 android:id="@+id/SA2EB9"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:hint="@string/sHint7"
                 android:inputType="textMultiLine"
                 android:textSize="16dp"
                 android:textStyle="italic"
@@ -565,6 +564,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginTop="30dp"
+                    android:hint="@string/sHint7"
                     android:inputType="textMultiLine"
                     android:textSize="16dp"
                     android:textStyle="italic" />

@@ -5,8 +5,8 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -27,7 +27,7 @@ public class SchoolAddActivity extends ActionBarActivity implements AdapterView.
     public String LENGTH = "(20)";
     public int criteria;
     public String criteria_comments;
-    boolean check1,check2;
+    boolean check1, check2;
     public String SQL_CREATE_ENTRIES = "school" + "(" +
             "school_id" + TEXT_TYPE + LENGTH + COMMA_SEP +
             "mandal" + TEXT_TYPE + LENGTH + COMMA_SEP +
@@ -49,7 +49,6 @@ public class SchoolAddActivity extends ActionBarActivity implements AdapterView.
     String type;
 
     EditText s_health, village, school, head, landline, mobile, email;
-
 
 
     @Override
@@ -153,12 +152,12 @@ public class SchoolAddActivity extends ActionBarActivity implements AdapterView.
         switch (view.getId()) {
             case R.id.radioOne:
                 type = "private";
-                check1=true;
+                check1 = true;
                 break;
 
             case R.id.radioTwo:
                 type = "government";
-                check1=true;
+                check1 = true;
                 break;
         }
     }
@@ -169,13 +168,13 @@ public class SchoolAddActivity extends ActionBarActivity implements AdapterView.
             case R.id.met:
                 s_health.setVisibility(view.GONE);
                 criteria = 1;
-                check2=true;
+                check2 = true;
                 break;
 
             case R.id.nmet:
                 s_health.setVisibility(view.VISIBLE);
                 criteria = 0;
-                check2=true;
+                check2 = true;
                 criteria_comments = s_health.getText().toString();
                 break;
         }
@@ -202,23 +201,17 @@ public class SchoolAddActivity extends ActionBarActivity implements AdapterView.
         if (village.getText().toString().trim().length() == 0 ||
                 school.getText().toString().trim().length() == 0 ||
                 !check1 || !check2 ||
-                head.getText().toString().trim().length() == 0 )
-                 {
+                head.getText().toString().trim().length() == 0) {
             showMessage("Error", "Please enter all values");
             return;
-        }
-
-        else if( Mandal.equals("Select..") || nblock.equals("Select..") || category.equals("Select..") )
-        {
-            showMessage("Error","Complete the fields in dropdown");
+        } else if (Mandal.equals("Select..") || nblock.equals("Select..") || category.equals("Select..")) {
+            showMessage("Error", "Complete the fields in dropdown");
             return;
-        }
-        else if(!((mobile.getText().toString().trim().length() == 10 &&  landline.getText().toString().trim().length() == 0)
-                || (landline.getText().toString().trim().length() == 10 &&  mobile.getText().toString().trim().length() == 0)
-                || (landline.getText().toString().trim().length() == 10 &&  mobile.getText().toString().trim().length() == 10)
-        ))
-        {
-            showMessage("Error","Please enter a valid Mobile/Landline number");
+        } else if (!((mobile.getText().toString().trim().length() == 10 && landline.getText().toString().trim().length() == 0)
+                || (landline.getText().toString().trim().length() == 10 && mobile.getText().toString().trim().length() == 0)
+                || (landline.getText().toString().trim().length() == 10 && mobile.getText().toString().trim().length() == 10)
+        )) {
+            showMessage("Error", "Please enter a valid Mobile/Landline number");
             return;
         }
 
@@ -281,7 +274,7 @@ public class SchoolAddActivity extends ActionBarActivity implements AdapterView.
     }
 
     public void showError() {
-        Toast.makeText(this, "Enter School ID",Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Enter School ID", Toast.LENGTH_SHORT).show();
     }
 
     public void Intent() {
@@ -307,7 +300,7 @@ public class SchoolAddActivity extends ActionBarActivity implements AdapterView.
 
         builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
-                    return;
+                return;
             }
         });
 
@@ -315,8 +308,8 @@ public class SchoolAddActivity extends ActionBarActivity implements AdapterView.
         dialog.show();
     }
 
-    public void backIntent(){
-        Intent back = new Intent(this,MainActivity.class);
+    public void backIntent() {
+        Intent back = new Intent(this, MainActivity.class);
         startActivity(back);
     }
 

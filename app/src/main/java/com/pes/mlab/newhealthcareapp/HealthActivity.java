@@ -5,8 +5,8 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -100,7 +100,7 @@ public class HealthActivity extends ActionBarActivity {
                 } else {
                     //setStudentID();
                     dialog.dismiss();
-                    Toast.makeText(getApplicationContext(),"Student ID: "+sid,Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Student ID: " + sid, Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -175,7 +175,7 @@ public class HealthActivity extends ActionBarActivity {
                 editText2.getText().toString().length() == 0 ||
                 editText3.getText().toString().length() == 0 ||
                 editText4.getText().toString().length() == 0 ||
-                editText5.getText().toString().length()==0 ||
+                editText5.getText().toString().length() == 0 ||
                 editText6.getText().toString().length() == 0 ||
                 editText7.getText().toString().length() == 0 ||
                 editText8.getText().toString().length() == 0) {
@@ -185,14 +185,14 @@ public class HealthActivity extends ActionBarActivity {
         }
 
         INSERT =
-                "'" + sid + "','" + editText1.getText().toString() + "','" + editText2.getText().toString() + "'"+
-                ",'" + editText3.getText().toString() + "','" + editText4.getText().toString() + "'"+
-                ",'" + editText5.getText().toString() + "','" + editText6.getText().toString() + "'"+
-                ",'" + editText7.getText().toString() + "','" + editText8.getText().toString() + "'"+
-                ",'"+nails+"'"+
-                ",'"+bath+"'"+
-                ",'"+groom+"'"+
-                ",'"+oralcare+"'";
+                "'" + sid + "','" + editText1.getText().toString() + "','" + editText2.getText().toString() + "'" +
+                        ",'" + editText3.getText().toString() + "','" + editText4.getText().toString() + "'" +
+                        ",'" + editText5.getText().toString() + "','" + editText6.getText().toString() + "'" +
+                        ",'" + editText7.getText().toString() + "','" + editText8.getText().toString() + "'" +
+                        ",'" + nails + "'" +
+                        ",'" + bath + "'" +
+                        ",'" + groom + "'" +
+                        ",'" + oralcare + "'";
 
         db.execSQL("INSERT INTO health VALUES (" + INSERT + ")");
         showMessage("Success", "Record added");
@@ -226,8 +226,8 @@ public class HealthActivity extends ActionBarActivity {
         dialog.show();
     }
 
-    public void backIntent(){
-        Intent back = new Intent(this,UpdateActivity.class);
+    public void backIntent() {
+        Intent back = new Intent(this, UpdateActivity.class);
         startActivity(back);
     }
 

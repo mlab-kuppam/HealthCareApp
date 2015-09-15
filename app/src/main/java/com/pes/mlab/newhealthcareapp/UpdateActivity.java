@@ -1,8 +1,8 @@
 package com.pes.mlab.newhealthcareapp;
 
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -32,34 +32,34 @@ public class UpdateActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void CHANGE(View view){
-        switch (view.getId()){
+    public void CHANGE(View view) {
+        switch (view.getId()) {
             case R.id.oral:
-                Intent i = new Intent(this,OralActivity.class);
+                Intent i = new Intent(this, OralActivity.class);
                 startActivity(i);
                 break;
             case R.id.eye:
-                Intent j = new Intent(this,EyeContActivity.class);
+                Intent j = new Intent(this, EyeContActivity.class);
                 startActivity(j);
                 break;
             case R.id.ent:
-                Intent k = new Intent(this,ENTActivity.class);
+                Intent k = new Intent(this, ENTActivity.class);
                 startActivity(k);
                 break;
             case R.id.skin:
-                Intent l = new Intent(this,SkinActivity.class);
+                Intent l = new Intent(this, SkinActivity.class);
                 startActivity(l);
                 break;
             case R.id.sys_one:
-                Intent m = new Intent(this,SYS_ONEActivity.class);
+                Intent m = new Intent(this, SYS_ONEActivity.class);
                 startActivity(m);
                 break;
             case R.id.sys_two:
-                Intent n = new Intent(this,SYS_twoActivity.class);
+                Intent n = new Intent(this, SYS_twoActivity.class);
                 startActivity(n);
                 break;
             case R.id.health:
-                Intent o = new Intent(this,HealthActivity.class);
+                Intent o = new Intent(this, HealthActivity.class);
                 startActivity(o);
                 break;
 
@@ -70,7 +70,7 @@ public class UpdateActivity extends ActionBarActivity {
 
     @Override
     public void onBackPressed() {
-        Intent i = new Intent(this,MainActivity.class);
+        Intent i = new Intent(this, MainActivity.class);
         startActivity(i);
     }
 }

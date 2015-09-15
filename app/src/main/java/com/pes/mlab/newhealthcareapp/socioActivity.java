@@ -1,18 +1,16 @@
 package com.pes.mlab.newhealthcareapp;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -36,7 +34,7 @@ public class socioActivity extends ActionBarActivity implements AdapterView.OnIt
             "mandal" + TEXT_TYPE + "(20)" + COMMA_SEP +
             "landline INT(10)" + COMMA_SEP +
             "mobile INT(10)" + COMMA_SEP +
-            "family_type" + TEXT_TYPE +  "(15)" + COMMA_SEP +
+            "family_type" + TEXT_TYPE + "(15)" + COMMA_SEP +
             "member_no INT(3)" + COMMA_SEP +
             "family_head " + TEXT_TYPE + LENGTH + COMMA_SEP +
             "aadhar_no" + TEXT_TYPE + "(12)" + COMMA_SEP +
@@ -58,7 +56,7 @@ public class socioActivity extends ActionBarActivity implements AdapterView.OnIt
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_socio);
-        Toast.makeText(getApplicationContext(),"Student ID: "+AddActivity.sid, Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), "Student ID: " + AddActivity.sid, Toast.LENGTH_SHORT).show();
         db = openOrCreateDatabase("healthcare", Context.MODE_PRIVATE, null);
         db.execSQL("CREATE TABLE IF NOT EXISTS " + SQL_CREATE_ENTRIES);
 
@@ -162,43 +160,32 @@ public class socioActivity extends ActionBarActivity implements AdapterView.OnIt
     private void ADDNEWSTUDENT() {
 
         boolean a = aadhar.getText().toString().trim().length() == 0 || aadhar.getText().toString().trim().length() == 12;
-        boolean b= mobile.getText().toString().trim().length() == 10;
         if (village.getText().toString().trim().length() == 0 ||
-                post.getText().toString().trim().length() == 0 || !check1  ||
-                number.getText().toString().trim().length() == 0 ) {
+                post.getText().toString().trim().length() == 0 || !check1 ||
+                number.getText().toString().trim().length() == 0) {
             showMessage("Error", "Please enter all values");
             return;
-        }
-        else if(!a)
-        {
-            showMessage("Error","Please enter a valid Aadhar number");
-        }
-
-        else if( n_mandal.equals("Select..") || n_familyType.equals("Select..") || n_familyHead.equals("Select..") ||
+        } else if (!a) {
+            showMessage("Error", "Please enter a valid Aadhar number");
+        } else if (n_mandal.equals("Select..") || n_familyType.equals("Select..") || n_familyHead.equals("Select..") ||
                 n_education.equals("Select..") || n_occupation.equals("Select..") || n_eduFather.equals("Select..") ||
                 n_occFather.equals("Select..") || n_eduMother.equals("Select..") || n_occMother.equals("Select..") ||
-                n_income.equals("Select..") || n_socioClass.equals("Select.."))
-        {
-            showMessage("Error","Complete the fields in dropdown");
+                n_income.equals("Select..") || n_socioClass.equals("Select..")) {
+            showMessage("Error", "Complete the fields in dropdown");
+            return;
+        } else if (!((mobile.getText().toString().trim().length() == 10 && landline.getText().toString().trim().length() == 0)
+                || (landline.getText().toString().trim().length() == 10 && mobile.getText().toString().trim().length() == 0)
+                || (landline.getText().toString().trim().length() == 10 && mobile.getText().toString().trim().length() == 10)
+        )) {
+            showMessage("Error", "Please enter a valid Mobile/Landline number");
+            return;
+        } else {
+            db.execSQL("INSERT INTO socio_demographic VALUES('" + AddActivity.sid + "','" + village.getText() + "','" + post.getText() + "','" + n_mandal + "','" + landline.getText() + "','"
+                    + mobile.getText() + "','" + n_familyType + "','" + number.getText() + "','" + n_familyHead + "','" + aadhar.getText() + "','" + n_education
+                    + "','" + n_occupation + "','" + n_eduFather + "','" + n_occFather + "','" + n_eduMother + "','" + n_occMother + "','" + n_income + "','" + n_socioClass + "','" + health + "','" + com.getText() + "','" + treatment.getText() + "');");
+            showMessage("Success", "Record added");
+            changeIntent();
         }
-
-
-
-
-
-        else if(!((mobile.getText().toString().trim().length() == 10 &&  landline.getText().toString().trim().length() == 0)
-                || (landline.getText().toString().trim().length() == 10 &&  mobile.getText().toString().trim().length() == 0)
-                || (landline.getText().toString().trim().length() == 10 &&  mobile.getText().toString().trim().length() == 10)
-        ))
-        {
-            showMessage("Error","Please enter a valid Mobile/Landline number");
-        }
-
-        db.execSQL("INSERT INTO socio_demographic VALUES('" + AddActivity.sid + "','" + village.getText() + "','" + post.getText() + "','" + n_mandal + "','" + landline.getText() + "','"
-                + mobile.getText() + "','" + n_familyType + "','" + number.getText() + "','" + n_familyHead + "','" + aadhar.getText() + "','" + n_education
-                + "','" + n_occupation + "','" + n_eduFather + "','" + n_occFather + "','" + n_eduMother + "','" + n_occMother + "','" + n_income + "','" + n_socioClass + "','" + health + "','" + com.getText() + "','" + treatment.getText() + "');");
-        showMessage("Success", "Record added");
-        changeIntent();
     }
 
 
@@ -267,12 +254,12 @@ public class socioActivity extends ActionBarActivity implements AdapterView.OnIt
         switch (view.getId()) {
             case R.id.healthful:
                 health = 1;
-                check1=true;
+                check1 = true;
                 com.setVisibility(view.GONE);
                 break;
             case R.id.NHealthful:
                 health = 0;
-                check1=true;
+                check1 = true;
                 com.setVisibility(view.VISIBLE);
                 break;
         }

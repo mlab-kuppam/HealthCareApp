@@ -8,10 +8,10 @@ import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v7.app.ActionBarActivity;
-import android.os.Bundle;
 import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -32,6 +32,8 @@ import java.io.File;
 
 public class AddActivity extends ActionBarActivity implements AdapterView.OnItemSelectedListener {
 
+    private static final int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 100;
+    static String sid;
     public String TEXT_TYPE = " VARCHAR";
     public String COMMA_SEP = ",";
     public String LENGTH = "(20)";
@@ -48,16 +50,17 @@ public class AddActivity extends ActionBarActivity implements AdapterView.OnItem
             "attendance DECIMAL(4)" + COMMA_SEP +
             "grade DECIMAL(4)" + COMMA_SEP +
             "PRIMARY KEY(student_id));";
+    public boolean check1;
     String genderString;
-    private static final int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 100;
-    static String sid;
     ImageView studentpic;
     TextView studentID;
     DatePicker dp;
     Spinner standard;
     SQLiteDatabase db;
-    public boolean check1;
     EditText name, father, mother, guardian, attnd, grade;
+    String std;
+    String pid = AddActivity.sid + "_ch";
+    String image;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,7 +68,7 @@ public class AddActivity extends ActionBarActivity implements AdapterView.OnItem
         setContentView(R.layout.activity_add);
 
         studentidDialog();
-        Toast.makeText(getApplicationContext(),"School ID: "+SchoolAddActivity.school_id,Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), "School ID: " + SchoolAddActivity.school_id, Toast.LENGTH_SHORT).show();
 
         dp = (DatePicker) findViewById(R.id.age);
         studentID = (TextView) findViewById(R.id.studentID);
@@ -102,24 +105,28 @@ public class AddActivity extends ActionBarActivity implements AdapterView.OnItem
     public void ADD() {
 
         int day = dp.getDayOfMonth();
-        int mont = dp.getMonth() + 1;
+        int month = dp.getMonth() + 1;
         int year = dp.getYear();
 
-        String date = year + "-" + mont + "-" + day;
+        String date = year + "-" + month + "-" + day;
 
         if (name.getText().toString().trim().length() == 0 ||
                 attnd.getText().toString().trim().length() == 0 ||
                 !check1 ||
-                grade.getText().toString().trim().length() == 0)
-        {
+                grade.getText().toString().trim().length() == 0) {
             showMessage("Error", "Please enter all values");
             return;
-        }
-        else if (father.getText().toString().trim().length() == 0 && guardian.getText().toString().trim().length() == 0 && mother.getText().toString().trim().length() == 0) {
+        } else if (std.equals("Select..")) {
+            showMessage("Error", "Complete the fields in dropdown");
+            return;
+        } else if (Integer.parseInt(attnd.getText().toString().trim()) > 100 || Integer.parseInt(grade.getText().toString().trim()) > 100
+                || Integer.parseInt(grade.getText().toString().trim()) < 0 || Integer.parseInt(attnd.getText().toString().trim()) < 0) {
+            showMessage("Error", "Please enter proper percentage");
+            return;
+        } else if (father.getText().toString().trim().length() == 0 && guardian.getText().toString().trim().length() == 0 && mother.getText().toString().trim().length() == 0) {
             showMessage("Error", "Please enter Father/Mother/Guardian name");
             return;
-        }
-        else {
+        } else {
             db.execSQL("INSERT INTO child VALUES('" + sid + "','" + SchoolAddActivity.school_id + "','" + name.getText() + "','" + date + "','" + genderString + "','" + std + "','" + father.getText() + "','" + mother.getText() + "','" + guardian.getText() + "','" + attnd.getText() + "','" + grade.getText() + "');");
             showMessage("Success", "Record added");
             changeIntent();
@@ -131,17 +138,17 @@ public class AddActivity extends ActionBarActivity implements AdapterView.OnItem
         switch (view.getId()) {
             case R.id.gender1:
                 genderString = "male";
-                check1=true;
+                check1 = true;
                 break;
 
             case R.id.gender2:
                 genderString = "female";
-                check1=true;
+                check1 = true;
                 break;
 
             case R.id.gender3:
                 genderString = "other";
-                check1=true;
+                check1 = true;
                 break;
         }
     }
@@ -205,13 +212,10 @@ public class AddActivity extends ActionBarActivity implements AdapterView.OnItem
         studentID.setText(AddActivity.sid);
     }
 
-
     public void Intent() {
         Intent intent = new Intent(this, SchoolAddActivity.class);
         startActivity(intent);
     }
-
-    String std;
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -224,15 +228,6 @@ public class AddActivity extends ActionBarActivity implements AdapterView.OnItem
     public void onNothingSelected(AdapterView<?> parent) {
 
     }
-
-    class clicker implements ImageView.OnClickListener {
-
-        @Override
-        public void onClick(View v) {
-            capture();
-        }
-    }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -262,7 +257,7 @@ public class AddActivity extends ActionBarActivity implements AdapterView.OnItem
         // start the image capture Intent
         File imagesFolder = new File(Environment.getExternalStorageDirectory(), "Images");
         imagesFolder.mkdirs();
-        File image = new File(imagesFolder, pid+".jpg");
+        File image = new File(imagesFolder, pid + ".jpg");
         Uri uriSavedImage = Uri.fromFile(image);
         intent.putExtra(MediaStore.EXTRA_OUTPUT, uriSavedImage);
         startActivityForResult(intent, CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE);
@@ -274,14 +269,12 @@ public class AddActivity extends ActionBarActivity implements AdapterView.OnItem
         startActivity(setIntent);
     }
 
-    String pid = AddActivity.sid+"_ch";
-    String image;
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE) {
             if (resultCode == RESULT_OK) {
                 // Image captured and saved to fileUri specified in the Intent
-                File imgFile = new File("/sdcard/MyImages/"+pid+".jpg");
+                File imgFile = new File("/sdcard/MyImages/" + pid + ".jpg");
                 if (imgFile.exists()) {
                     Bitmap myBitmap = BitmapFactory.decodeFile(imgFile.getAbsolutePath());
                     studentpic.setImageBitmap(myBitmap);
@@ -300,10 +293,10 @@ public class AddActivity extends ActionBarActivity implements AdapterView.OnItem
 
     }
 
-    public  String encodeTobase64(Bitmap image) {
+    public String encodeTobase64(Bitmap image) {
         System.gc();
 
-        if (image == null)return null;
+        if (image == null) return null;
 
         Bitmap immagex = image;
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
@@ -342,13 +335,21 @@ public class AddActivity extends ActionBarActivity implements AdapterView.OnItem
         dialog.show();
     }
 
-    public void backIntent(){
-        Intent back = new Intent(this,MainActivity.class);
+    public void backIntent() {
+        Intent back = new Intent(this, MainActivity.class);
         startActivity(back);
     }
 
     @Override
     public void onBackPressed() {
         backDialog();
+    }
+
+    class clicker implements ImageView.OnClickListener {
+
+        @Override
+        public void onClick(View v) {
+            capture();
+        }
     }
 }

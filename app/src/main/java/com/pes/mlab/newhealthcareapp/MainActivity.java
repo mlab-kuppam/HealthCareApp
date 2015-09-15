@@ -8,8 +8,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
 import android.os.Bundle;
-//import android.support.v7.app.ActionBarActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -36,6 +34,8 @@ import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
+//import android.support.v7.app.ActionBarActivity;
+
 public class MainActivity extends Activity {
     //Declaring Buttons
     Button add, update, sync;
@@ -53,7 +53,7 @@ public class MainActivity extends Activity {
             //Therefore we use only the web page URL as the parameter of the HttpPost argument
             httpPost = new HttpPost("http://192.168.1.6/trial.php");
 
-            System.out.println("j="+trial);
+            System.out.println("j=" + trial);
 
 
             // Because we are not passing values over the URL, we should have a mechanism to pass the values that can be
@@ -128,8 +128,8 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        if(check_internet && INTERNER_CHECK()){
-            showMessage("You have Internet Connection","Please Sync now");
+        if (check_internet && INTERNER_CHECK()) {
+            showMessage("You have Internet Connection", "Please Sync now");
         }
         check_internet = false;
         db = openOrCreateDatabase("healthcare", Context.MODE_PRIVATE, null);
@@ -207,12 +207,11 @@ public class MainActivity extends Activity {
                 t = json_fin.toString();
             } catch (JSONException e) {
                 e.printStackTrace();
-            }
-            catch(Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
             }
 
-            if (!t.equals("{}") ) {
+            if (!t.equals("{}")) {
                 GetXMLTask get = new GetXMLTask();
                 get.execute(new String[]{t});
                 /*for (int i = 0; i < tablenames.size(); i++) {
@@ -260,6 +259,7 @@ public class MainActivity extends Activity {
     }
 
     @Override
-    public void onBackPressed(){}
+    public void onBackPressed() {
+    }
 
 }

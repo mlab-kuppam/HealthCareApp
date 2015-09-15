@@ -14,7 +14,8 @@
         android:layout_height="fill_parent"
         android:layout_alignParentBottom="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="20dp">
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp">
 
         <LinearLayout
             android:layout_width="fill_parent"
@@ -121,8 +122,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:checked="false"
-                    android:text="@string/priv"
                     android:onClick="typeSchool"
+                    android:text="@string/priv"
                     android:textAlignment="center"
                     android:textSize="16dp" />
 
@@ -130,9 +131,9 @@
                     android:id="@+id/radioTwo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:onClick="typeSchool"
                     android:layout_weight="1"
                     android:checked="false"
+                    android:onClick="typeSchool"
                     android:text="@string/govern"
                     android:textSize="16dp" />
 
@@ -276,8 +277,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:checked="false"
-                    android:text="@string/genInfo13"
                     android:onClick="schoolHealth"
+                    android:text="@string/genInfo13"
                     android:textAlignment="center"
                     android:textSize="16dp" />
 
@@ -287,8 +288,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:checked="false"
-                    android:text="@string/genInfo14"
                     android:onClick="schoolHealth"
+                    android:text="@string/genInfo14"
                     android:textSize="16dp" />
 
             </RadioGroup>
