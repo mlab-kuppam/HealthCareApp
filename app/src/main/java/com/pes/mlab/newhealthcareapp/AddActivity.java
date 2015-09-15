@@ -102,10 +102,10 @@ public class AddActivity extends ActionBarActivity implements AdapterView.OnItem
     public void ADD() {
 
         int day = dp.getDayOfMonth();
-        int month = dp.getMonth() + 1;
+        int mont = dp.getMonth() + 1;
         int year = dp.getYear();
 
-        String date = year + "-" + month + "-" + day;
+        String date = year + "-" + mont + "-" + day;
 
         if (name.getText().toString().trim().length() == 0 ||
                 attnd.getText().toString().trim().length() == 0 ||

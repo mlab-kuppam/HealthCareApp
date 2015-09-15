@@ -18,4 +18,4 @@
 	<translate android:fromXDelta="100%p" android:toXDelta="0" android:duration="300"/>
 	<alpha android:fromAlpha="0.0" android:toAlpha="1.0" android:duration="300" />
 </set>
-<!-- From: file:/F:/Aamir%20Important/Kuppam/HealthCareApp/app/src/main/res/anim/push_left_in.xml -->
+<!-- From: file:/C:/Users/Aamir%20Hasan/Documents/GitHub/HealthCareApp/app/src/main/res/anim/push_left_in.xml -->
