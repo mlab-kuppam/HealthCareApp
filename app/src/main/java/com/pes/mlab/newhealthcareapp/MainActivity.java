@@ -1,5 +1,6 @@
 package com.pes.mlab.newhealthcareapp;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -7,7 +8,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+//import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -35,7 +36,7 @@ import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends Activity {
     //Declaring Buttons
     Button add, update, sync;
     public static boolean check_internet = true;
@@ -50,7 +51,10 @@ public class MainActivity extends ActionBarActivity {
             HttpPost httpPost;
             // In a POST request, we don't pass the values in the UL.
             //Therefore we use only the web page URL as the parameter of the HttpPost argument
-            httpPost = new HttpPost("http://10.3.32.53/trial.php");
+            httpPost = new HttpPost("http://192.168.1.6/trial.php");
+
+            System.out.println("j="+trial);
+
 
             // Because we are not passing values over the URL, we should have a mechanism to pass the values that can be
             //uniquely separate by the other end.
@@ -113,7 +117,6 @@ public class MainActivity extends ActionBarActivity {
 
         @Override
         protected void onPostExecute(String output) {
-            Log.d("lol", output);
             Toast.makeText(getApplicationContext(), output, Toast.LENGTH_LONG).show();
         }
     }
@@ -137,7 +140,7 @@ public class MainActivity extends ActionBarActivity {
 
     //To Add Schools and Students(Changing Intent to SchoolAdd Activity)
     public void ADD(View view) {
-        Intent intent = new Intent(this, SchoolAddActivity.class);
+        Intent intent = new Intent(this, AddActivity.class);
         startActivity(intent);
         overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
     }
@@ -212,12 +215,12 @@ public class MainActivity extends ActionBarActivity {
             if (!t.equals("{}") ) {
                 GetXMLTask get = new GetXMLTask();
                 get.execute(new String[]{t});
-                for (int i = 0; i < tablenames.size(); i++) {
+                /*for (int i = 0; i < tablenames.size(); i++) {
                     db.execSQL("DROP TABLE IF EXISTS " + tablenames.get(i));
-                }
-            } else {
+                }*/
+            }/* else {
                 Toast.makeText(getApplicationContext(), "No Entries found", Toast.LENGTH_LONG).show();
-            }
+            }*/
         } else {
             showMessage("Check Internert Connection", "Try again");
         }

@@ -198,7 +198,6 @@ public class SchoolAddActivity extends ActionBarActivity implements AdapterView.
 
 
     public void ADD() {
-        boolean b= mobile.getText().toString().trim().length() == 10;
 
         if (village.getText().toString().trim().length() == 0 ||
                 school.getText().toString().trim().length() == 0 ||
@@ -214,7 +213,10 @@ public class SchoolAddActivity extends ActionBarActivity implements AdapterView.
             showMessage("Error","Complete the fields in dropdown");
             return;
         }
-        else if(!b && landline.getText().toString().trim().length() == 0)
+        else if(!((mobile.getText().toString().trim().length() == 10 &&  landline.getText().toString().trim().length() == 0)
+                || (landline.getText().toString().trim().length() == 10 &&  mobile.getText().toString().trim().length() == 0)
+                || (landline.getText().toString().trim().length() == 10 &&  mobile.getText().toString().trim().length() == 10)
+        ))
         {
             showMessage("Error","Please enter a valid Mobile/Landline number");
             return;

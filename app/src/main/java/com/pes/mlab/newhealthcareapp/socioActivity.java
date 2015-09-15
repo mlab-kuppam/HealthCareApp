@@ -174,15 +174,22 @@ public class socioActivity extends ActionBarActivity implements AdapterView.OnIt
             showMessage("Error","Please enter a valid Aadhar number");
         }
 
-        else if( mandal.equals("Select..") || familyType.equals("Select..") || familyHead.equals("Select..") ||
-                education.equals("Select..") || occupation.equals("Select..") || eduFather.equals("Select..") ||
-                occFather.equals("Select..") || eduMother.equals("Select..") || occMother.equals("Select..") ||
-                income.equals("Select..") || socioClass.equals("Select.."))
+        else if( n_mandal.equals("Select..") || n_familyType.equals("Select..") || n_familyHead.equals("Select..") ||
+                n_education.equals("Select..") || n_occupation.equals("Select..") || n_eduFather.equals("Select..") ||
+                n_occFather.equals("Select..") || n_eduMother.equals("Select..") || n_occMother.equals("Select..") ||
+                n_income.equals("Select..") || n_socioClass.equals("Select.."))
         {
             showMessage("Error","Complete the fields in dropdown");
         }
 
-        else if(!b &&  landline.getText().toString().trim().length() == 0 )
+
+
+
+
+        else if(!((mobile.getText().toString().trim().length() == 10 &&  landline.getText().toString().trim().length() == 0)
+                || (landline.getText().toString().trim().length() == 10 &&  mobile.getText().toString().trim().length() == 0)
+                || (landline.getText().toString().trim().length() == 10 &&  mobile.getText().toString().trim().length() == 10)
+        ))
         {
             showMessage("Error","Please enter a valid Mobile/Landline number");
         }

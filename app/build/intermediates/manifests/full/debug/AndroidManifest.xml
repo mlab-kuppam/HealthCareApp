@@ -25,9 +25,8 @@
         android:screenOrientation="portrait"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.pes.mlab.newhealthcareapp.MainActivity"
-            android:label="HealthCare"
-            android:screenOrientation="portrait" >
+            android:name="com.pes.mlab.newhealthcareapp.SplashScreen"
+            android:label="SplashScreen" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -35,45 +34,65 @@
             </intent-filter>
         </activity>
         <activity
+            android:name="com.pes.mlab.newhealthcareapp.MainActivity"
+            android:label="HealthCare"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="com.pes.mlab.newhealthcareapp" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name="com.pes.mlab.newhealthcareapp.AddActivity"
-            android:label="@string/title_activity_add" >
+            android:label="@string/title_activity_add"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name="com.pes.mlab.newhealthcareapp.SchoolAddActivity"
-            android:label="@string/title_activity_school_add" >
+            android:label="@string/title_activity_school_add"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name="com.pes.mlab.newhealthcareapp.socioActivity"
-            android:label="@string/title_activity_socio" >
+            android:label="@string/title_activity_socio"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name="com.pes.mlab.newhealthcareapp.UpdateActivity"
             android:label="@string/title_activity_update"
-            android:parentActivityName="com.pes.mlab.newhealthcareapp.MainActivity" >
+            android:parentActivityName="com.pes.mlab.newhealthcareapp.MainActivity"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name="com.pes.mlab.newhealthcareapp.OralActivity"
-            android:label="@string/title_activity_oral" >
+            android:label="@string/title_activity_oral"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name="com.pes.mlab.newhealthcareapp.EyeActivity"
-            android:label="@string/title_activity_eye" >
+            android:label="@string/title_activity_eye"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name="com.pes.mlab.newhealthcareapp.ENTActivity"
-            android:label="@string/title_activity_ent" >
+            android:label="@string/title_activity_ent"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name="com.pes.mlab.newhealthcareapp.SkinActivity"
-            android:label="@string/title_activity_skin" >
+            android:label="@string/title_activity_skin"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name="com.pes.mlab.newhealthcareapp.SYS_ONEActivity"
-            android:label="@string/title_activity_sys__one" >
+            android:label="@string/title_activity_sys__one"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name="com.pes.mlab.newhealthcareapp.SYS_twoActivity"
-            android:label="@string/title_activity_sys_two" >
+            android:label="@string/title_activity_sys_two"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name="com.pes.mlab.newhealthcareapp.EyeContActivity"
@@ -82,7 +101,8 @@
         </activity>
         <activity
             android:name="com.pes.mlab.newhealthcareapp.HealthActivity"
-            android:label="@string/title_activity_health" >
+            android:label="@string/title_activity_health"
+            android:screenOrientation="portrait" >
         </activity>
     </application>
 

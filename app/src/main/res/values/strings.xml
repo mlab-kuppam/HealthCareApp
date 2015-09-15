@@ -196,8 +196,8 @@
     </string-array>
 
     <string name="sD18"><b>Housing standards:</b></string>
-    <string name="sD19">Healthful:</string>
-    <string name="sD20">Not Healthful:</string>
+    <string name="sD19">Healthful</string>
+    <string name="sD20">Not Healthful</string>
     <string name="sHint7"><i>Enter Comment</i></string>
     <string name="sD21"><b>Place of treatment in \ncase of illness:</b></string>
     <string name="sHint8"><i>Enter place</i></string>
