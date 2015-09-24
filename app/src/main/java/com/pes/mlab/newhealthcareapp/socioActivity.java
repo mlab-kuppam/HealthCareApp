@@ -18,12 +18,21 @@ import android.widget.Toast;
 
 public class socioActivity extends ActionBarActivity implements AdapterView.OnItemSelectedListener {
 
+    //Activity Elements declaration
     Spinner mandal, familyType, familyHead, education, occupation, income, eduFather, occFather, eduMother, occMother, socioClass;
-    String n_mandal, n_familyType, n_familyHead, n_education, n_occupation, n_income, n_eduFather, n_occFather, n_eduMother, n_occMother, n_socioClass;
     EditText village, post, landline, mobile, number, aadhar, com, treatment;
+
+    //Form outputs as String
+    String n_mandal, n_familyType, n_familyHead, n_education, n_occupation, n_income, n_eduFather, n_occFather, n_eduMother, n_occMother, n_socioClass;
+    //Boolean to check Health field
+    boolean check1 = false;
+    //Declaring variables
+    int health;
+
+    //Declaring DB
     SQLiteDatabase db;
 
-    boolean check1;
+    //DB Query
     public String TEXT_TYPE = " VARCHAR";
     public String COMMA_SEP = ",";
     public String LENGTH = "(20)";
@@ -56,10 +65,13 @@ public class socioActivity extends ActionBarActivity implements AdapterView.OnIt
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_socio);
+        //Toast to print the studentID Entered in the prev Activity
         Toast.makeText(getApplicationContext(), "Student ID: " + AddActivity.sid, Toast.LENGTH_SHORT).show();
+        //Opening DB
         db = openOrCreateDatabase("healthcare", Context.MODE_PRIVATE, null);
+        //Running Query
         db.execSQL("CREATE TABLE IF NOT EXISTS " + SQL_CREATE_ENTRIES);
-
+        //Initializing activity elements
         com = (EditText) findViewById(R.id.housingCom);
         village = (EditText) findViewById(R.id.villageName);
         post = (EditText) findViewById(R.id.postOffice);
@@ -68,7 +80,7 @@ public class socioActivity extends ActionBarActivity implements AdapterView.OnIt
         number = (EditText) findViewById(R.id.numberOfMembers);
         treatment = (EditText) findViewById(R.id.treatment);
         aadhar = (EditText) findViewById(R.id.aadhar);
-
+        //Initializing spinners
         mandal = (Spinner) findViewById(R.id.mandal);
         familyType = (Spinner) findViewById(R.id.familyType);
         familyHead = (Spinner) findViewById(R.id.familyHead);
@@ -81,6 +93,7 @@ public class socioActivity extends ActionBarActivity implements AdapterView.OnIt
         income = (Spinner) findViewById(R.id.Income);
         socioClass = (Spinner) findViewById(R.id.socioClass);
 
+        //ArrayAdapters for spinners
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.mandal, android.R.layout.simple_spinner_item);
         // Specify the layout to use when the list of choices appears
@@ -157,6 +170,7 @@ public class socioActivity extends ActionBarActivity implements AdapterView.OnIt
         }
     }
 
+    //Method to create a new Student
     private void ADDNEWSTUDENT() {
 
         boolean a = aadhar.getText().toString().trim().length() == 0 || aadhar.getText().toString().trim().length() == 12;
@@ -188,12 +202,14 @@ public class socioActivity extends ActionBarActivity implements AdapterView.OnIt
         }
     }
 
-
+    //Method to change intent to add new student
     public void changeIntent() {
         Intent intent = new Intent(this, AddActivity.class);
         startActivity(intent);
     }
 
+    //Method to create the dialog box
+    //@params title and message
     public void showMessage(String title, String message) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setCancelable(true);
@@ -203,6 +219,7 @@ public class socioActivity extends ActionBarActivity implements AdapterView.OnIt
 
     }
 
+    //Spinner Method to get selected output
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         switch (parent.getId()) {
@@ -244,12 +261,9 @@ public class socioActivity extends ActionBarActivity implements AdapterView.OnIt
 
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
-
     }
 
-
-    int health;
-
+    //Method to set the additional EditText Boxes for comments
     public void health(View view) {
         switch (view.getId()) {
             case R.id.healthful:

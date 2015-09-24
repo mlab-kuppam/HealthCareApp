@@ -5,8 +5,8 @@
 
 
     <item android:id="@+id/action_eye"
-        android:icon="@drawable/ic_navigate_next_white_36dp"
+        android:icon="@drawable/ic_person_add_white_36dp"
         android:title="Next"
         app:showAsAction="ifRoom"  />
 </menu>
-<!-- From: file:/C:/Users/Aamir%20Hasan/Documents/GitHub/HealthCareApp/app/src/main/res/menu/menu_eye.xml -->
+<!-- From: file:/F:/GitHub_Repo/HealthCareApp/app/src/main/res/menu/menu_eye.xml -->

@@ -289,6 +289,7 @@
                     android:id="@+id/SA2EB5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:hint="@string/sHint7"
                     android:layout_marginLeft="60dp"
                     android:layout_toRightOf="@id/text2"
                     android:inputType="textMultiLine"
@@ -573,4 +574,4 @@
     </ScrollView>
 
 </RelativeLayout>
-<!-- From: file:/C:/Users/Aamir%20Hasan/Documents/GitHub/HealthCareApp/app/src/main/res/layout/activity_sys_two.xml -->
+<!-- From: file:/F:/GitHub_Repo/HealthCareApp/app/src/main/res/layout/activity_sys_two.xml -->

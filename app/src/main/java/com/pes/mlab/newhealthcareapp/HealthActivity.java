@@ -17,8 +17,15 @@ import android.widget.Toast;
 
 public class HealthActivity extends ActionBarActivity {
 
+    //Declaring sid -> studentID(must)
+    String sid;
+    //Declaring Variables
+    int nails = 10, groom = 10, bath = 10, oralcare = 10;
+    //Declaring EditText in the Activity
     EditText editText1, editText2, editText3, editText4, editText5, editText6, editText7, editText8;
+    //Declaring DB
     SQLiteDatabase db;
+    //DB Query
     String INSERT;
     public String TABLE =
             "student_id VARCHAR[20],height INTEGER[3],weight INTEGER[3]," +
@@ -33,6 +40,9 @@ public class HealthActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_health);
 
+        //Invoking StudentID Dialog box
+        studentidDialog();
+        //Initializing EditTexts
         editText1 = (EditText) findViewById(R.id.height);
         editText2 = (EditText) findViewById(R.id.weight);
         editText3 = (EditText) findViewById(R.id.abdominal);
@@ -41,13 +51,9 @@ public class HealthActivity extends ActionBarActivity {
         editText6 = (EditText) findViewById(R.id.rrate);
         editText7 = (EditText) findViewById(R.id.systole);
         editText8 = (EditText) findViewById(R.id.diastole);
-
-
+        //Opening DB
         db = openOrCreateDatabase("healthcare", Context.MODE_PRIVATE, null);
         db.execSQL("CREATE TABLE IF NOT EXISTS health (" + TABLE + ")");
-        studentidDialog();
-
-
     }
 
 
@@ -72,8 +78,12 @@ public class HealthActivity extends ActionBarActivity {
         }
     }
 
-    String sid;
+    @Override
+    public void onBackPressed() {
+        backDialog();
+    }
 
+    //Method to create studentId dialog box
     public void studentidDialog() {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -117,17 +127,18 @@ public class HealthActivity extends ActionBarActivity {
         dialog.show();
     }
 
+    //Method to change intent to root activity
     public void Intent() {
-
         Intent i = new Intent(this, UpdateActivity.class);
         startActivity(i);
-        //Toast.makeText(getApplicationContext(),sid,Toast.LENGTH_LONG).show();
     }
 
     public void showError() {
         Toast.makeText(this, "Enter Student ID", Toast.LENGTH_LONG).show();
     }
 
+    //Method to create the dialog box
+    //@params title and message
     public void showMessage(String title, String message) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setCancelable(true);
@@ -137,8 +148,7 @@ public class HealthActivity extends ActionBarActivity {
 
     }
 
-    int nails = 10, groom = 10, bath = 10, oralcare = 10;
-
+    //Method to handle radio Button selection
     public void onRadioselect(View v) {
         switch (v.getId()) {
             case R.id.x1:
@@ -168,7 +178,7 @@ public class HealthActivity extends ActionBarActivity {
         }
     }
 
-
+    //Method to create new student entry
     public void NEXT() {
 
         if (editText1.getText().toString().length() == 0 ||
@@ -200,6 +210,7 @@ public class HealthActivity extends ActionBarActivity {
         startActivity(S);
     }
 
+    //Method to alert user about deletion of data
     public void backDialog() {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -212,7 +223,7 @@ public class HealthActivity extends ActionBarActivity {
         builder.setPositiveButton("Done", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int id) {
-                backIntent();
+                Intent();
             }
         });
 
@@ -224,15 +235,5 @@ public class HealthActivity extends ActionBarActivity {
 
         AlertDialog dialog = builder.create();
         dialog.show();
-    }
-
-    public void backIntent() {
-        Intent back = new Intent(this, UpdateActivity.class);
-        startActivity(back);
-    }
-
-    @Override
-    public void onBackPressed() {
-        backDialog();
     }
 }

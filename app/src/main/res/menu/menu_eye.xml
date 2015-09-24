@@ -5,7 +5,7 @@
 
 
     <item android:id="@+id/action_eye"
-        android:icon="@drawable/ic_navigate_next_white_36dp"
+        android:icon="@drawable/ic_person_add_white_36dp"
         android:title="Next"
         app:showAsAction="ifRoom"  />
 </menu>

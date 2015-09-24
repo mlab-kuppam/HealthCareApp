@@ -17,13 +17,18 @@ import android.widget.Toast;
 
 public class SkinActivity extends ActionBarActivity {
 
+    //Declaring sid -> studentID(must)
+    String sid;
+    //Declaring EditText in the Activity
     EditText Scabtext, Pityaltext, Phrynotext, Pedicultext, Pityvertext, Imptext, Paputext, Tintext, Miltext, Viraltext, Other;
-
+    //Declaring Checks used in the Activity
     boolean check1, check2, check3, check4, check5, check6, check7, check8, check9, check10 = false;
+    //Declaring Variable
     private int[] checkarr = new int[50];
+    //Declaring DB
     SQLiteDatabase d_base;
+    //DB Query
     private String INSERT;
-
     private String TABLE =
             "student_id VARCHAR[20],sca_var INTEGER[1],sca_com VARCHAR[140]," +
                     "pa_var INTEGER[1] ,pa_com VARCHAR[140]," +
@@ -41,8 +46,10 @@ public class SkinActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_skin);
-        studentidDialog();
 
+        //Invoking StudentID Dialog box
+        studentidDialog();
+        //Initialization
         Scabtext = (EditText) findViewById(R.id.editText1);
         Pityaltext = (EditText) findViewById(R.id.editText2);
         Phrynotext = (EditText) findViewById(R.id.editText12);
@@ -54,11 +61,10 @@ public class SkinActivity extends ActionBarActivity {
         Miltext = (EditText) findViewById(R.id.editText9);
         Viraltext = (EditText) findViewById(R.id.editText10);
         Other = (EditText) findViewById(R.id.editText11);
-
+        //Opening DB
         d_base = openOrCreateDatabase("healthcare", Context.MODE_PRIVATE, null);
         d_base.execSQL("CREATE TABLE IF NOT EXISTS skin (" + TABLE + ")");
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -81,9 +87,12 @@ public class SkinActivity extends ActionBarActivity {
         }
     }
 
+    @Override
+    public void onBackPressed() {
+        backDialog();
+    }
 
-    String sid;
-
+    //Method to create studentId dialog box
     public void studentidDialog() {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -142,6 +151,7 @@ public class SkinActivity extends ActionBarActivity {
         //Toast.makeText(getApplicationContext(),sid,Toast.LENGTH_LONG).show();
     }
 
+    //Method to handle radio Button selection
     public void onRadiobuttonselected(View v) {
         switch (v.getId()) {
             case R.id.RBScab1:
@@ -259,6 +269,7 @@ public class SkinActivity extends ActionBarActivity {
         }
     }
 
+    //Method to create new student entry
     public void NEXT() {
         if (!check1 || !check2 || !check3 || !check4 || !check5 || !check6 || !check7 || !check8 || !check8 || !check9 || !check10) {
             showMessage("Error", "Please enter all values");
@@ -284,6 +295,7 @@ public class SkinActivity extends ActionBarActivity {
         startActivity(S);
     }
 
+    //Method to alert user about deletion of data
     public void backDialog() {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -310,16 +322,14 @@ public class SkinActivity extends ActionBarActivity {
         dialog.show();
     }
 
+    //Method to change intent to root activity
     public void backIntent() {
         Intent back = new Intent(this, UpdateActivity.class);
         startActivity(back);
     }
 
-    @Override
-    public void onBackPressed() {
-        backDialog();
-    }
-
+    //Method to create the dialog box
+    //@params title and message
     public void showMessage(String title, String message) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setCancelable(true);

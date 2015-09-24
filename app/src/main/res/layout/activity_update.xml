@@ -13,14 +13,15 @@
         android:id="@+id/oral"
         android:layout_width="220dp"
         android:layout_height="80dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="0dp"
+        android:layout_marginTop="30dp"
         android:drawableLeft="@drawable/ic_mood_black_36dp"
         android:onClick="CHANGE"
         android:text="ORAL"
         android:textSize="25dp"
-        android:typeface="sans" />
+        android:typeface="sans"
+        android:layout_below="@+id/health"
+        android:layout_alignLeft="@+id/eye"
+        android:layout_alignStart="@+id/eye" />
 
     <Button
         android:id="@+id/eye"
@@ -92,13 +93,13 @@
         android:id="@+id/health"
         android:layout_width="220dp"
         android:layout_height="80dp"
-        android:layout_below="@+id/sys_two"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
         android:drawableLeft="@drawable/ic_assessment_black_36dp"
         android:onClick="CHANGE"
         android:text="Health"
         android:textSize="25dp"
-        android:typeface="sans" />
+        android:typeface="sans"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

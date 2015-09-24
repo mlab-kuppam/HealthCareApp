@@ -15,22 +15,80 @@ import android.widget.EditText;
 
 public class EyeActivity extends ActionBarActivity {
 
-    EditText Cvis1, Cvis2, Bit1, Bit2, All1, All2, Night1, Night2, Congp1, Congp2, Congd1, Congd2, Amb1, Amb2, Nys1, Nys2, Fund1, Fund2, Other;
+    //Declaring elements in the activity
     Button btn1;
-    int[] b = new int[50];
-    SQLiteDatabase db;
-    boolean check1, check2, check3, check4, check5, check6, check7, check8, check9, check10, check11, check12, check13, check14, check15, check16, check17, check18 = false;
-    public String SQL_CREATE;
-    public String INSERT_QUERY;
-    public String INSERT_VALUES;
+    EditText Cvis1, Cvis2, Bit1, Bit2, All1, All2, Night1, Night2, Congp1, Congp2, Congd1, Congd2, Amb1, Amb2, Nys1, Nys2, Fund1, Fund2, Other;
+    //Declaring Checks used in the Activity
     public static boolean check = true;
+    boolean check1, check2, check3, check4, check5, check6, check7, check8, check9, check10, check11, check12, check13, check14, check15, check16, check17, check18 = false;
+    //Declaring strings
+    public String INSERT_VALUES;
+    //Declaring Radio Selection variable
+    int[] b = new int[50];
+    //Declaring DB
+    SQLiteDatabase db;
+    //DB Query
+    public String SQL_CREATE =
+            "student_id VARCHAR[20],vt_r_d VARCHAR[5] ," +
+                    "vt_r_n VARCHAR[5] ," +
+                    "vt_l_d VARCHAR[5] ," +
+                    "vt_l_n VARCHAR[5] ," +
+                    "rc_r_sd VARCHAR[5] ," +
+                    "rc_r_cd VARCHAR[5] ," +
+                    "rc_r_ad VARCHAR[5] ," +
+                    "rc_r_sn VARCHAR[5] ," +
+                    "rc_r_cn VARCHAR[5] ," +
+                    "rc_r_an VARCHAR[5] ," +
+                    "rc_l_sd VARCHAR[5] ," +
+                    "rc_l_cd VARCHAR[5] ," +
+                    "rc_l_ad VARCHAR[5] ," +
+                    "rc_l_sn VARCHAR[5] ," +
+                    "rc_l_cn VARCHAR[5] ," +
+                    "rc_l_an VARCHAR[5] ," +
+                    "colour_r_var INTEGER[1] ," +
+                    "colour_r_com VARCHAR[140] ," +
+                    "colour_l_var INTEGER[1] ," +
+                    "colour_l_com VARCHAR[140], " +
+                    "bit_r_var INTEGER[1] ," +
+                    "bit_r_com VARCHAR[140] ," +
+                    "bit_l_var INTEGER[1] , " +
+                    "bit_l_com VARCHAR[140] ," +
+                    "con_r_var INTEGER[1] ," +
+                    "con_r_com VARCHAR[140] ," +
+                    "con_l_var INTEGER[1] ," +
+                    "con_l_com VARCHAR[140] ," +
+                    "bli_r_var INTEGER[1] ," +
+                    "bli_r_com VARCHAR[140] ," +
+                    "bli_l_var INTEGER[1] ," +
+                    "bli_l_com VARCHAR[140] ," +
+                    "pto_r_var INTEGER[1] ," +
+                    "pto_r_com VARCHAR[140], " +
+                    "pto_l_var INTEGER[1] ," +
+                    "pto_l_com VARCHAR[140]," +
+                    "cat_r_var INTEGER[1] ," +
+                    "cat_r_com VARCHAR[140] ," +
+                    "cat_l_var INTEGER[1] ," +
+                    "cat_l_com VARCHAR[140], " +
+                    "amb_r_var INTEGER[1] ," +
+                    "amb_r_com VARCHAR[140], " +
+                    "amb_l_var INTEGER[1] ," +
+                    "amb_l_com VARCHAR[140] ," +
+                    "nys_r_var INTEGER[1] ," +
+                    "nys_r_com VARCHAR[140] ," +
+                    "nys_l_var INTEGER[1] ," +
+                    "nys_l_com VARCHAR[140] ," +
+                    "fun_r_var INTEGER[1] ," +
+                    "fun_r_com VARCHAR[140] ," +
+                    "fun_l_var INTEGER[1] ," +
+                    "fun_l_com VARCHAR[140], " +
+                    "others VARCHAR[140] ";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_eye);
 
-
+        //Initializing EditTexts
         Cvis1 = (EditText) findViewById(R.id.Text16);
         Cvis2 = (EditText) findViewById(R.id.Text17);
         Bit1 = (EditText) findViewById(R.id.Text1);
@@ -50,67 +108,10 @@ public class EyeActivity extends ActionBarActivity {
         Fund1 = (EditText) findViewById(R.id.Text13);
         Fund2 = (EditText) findViewById(R.id.Text14);
         Other = (EditText) findViewById(R.id.Text15);
-
-        SQL_CREATE =
-                "student_id VARCHAR[20],vt_r_d VARCHAR[5] ," +
-                        "vt_r_n VARCHAR[5] ," +
-                        "vt_l_d VARCHAR[5] ," +
-                        "vt_l_n VARCHAR[5] ," +
-                        "rc_r_sd VARCHAR[5] ," +
-                        "rc_r_cd VARCHAR[5] ," +
-                        "rc_r_ad VARCHAR[5] ," +
-                        "rc_r_sn VARCHAR[5] ," +
-                        "rc_r_cn VARCHAR[5] ," +
-                        "rc_r_an VARCHAR[5] ," +
-                        "rc_l_sd VARCHAR[5] ," +
-                        "rc_l_cd VARCHAR[5] ," +
-                        "rc_l_ad VARCHAR[5] ," +
-                        "rc_l_sn VARCHAR[5] ," +
-                        "rc_l_cn VARCHAR[5] ," +
-                        "rc_l_an VARCHAR[5] ," +
-                        "colour_r_var INTEGER[1] ," +
-                        "colour_r_com VARCHAR[140] ," +
-                        "colour_l_var INTEGER[1] ," +
-                        "colour_l_com VARCHAR[140], " +
-                        "bit_r_var INTEGER[1] ," +
-                        "bit_r_com VARCHAR[140] ," +
-                        "bit_l_var INTEGER[1] , " +
-                        "bit_l_com VARCHAR[140] ," +
-                        "con_r_var INTEGER[1] ," +
-                        "con_r_com VARCHAR[140] ," +
-                        "con_l_var INTEGER[1] ," +
-                        "con_l_com VARCHAR[140] ," +
-                        "bli_r_var INTEGER[1] ," +
-                        "bli_r_com VARCHAR[140] ," +
-                        "bli_l_var INTEGER[1] ," +
-                        "bli_l_com VARCHAR[140] ," +
-                        "pto_r_var INTEGER[1] ," +
-                        "pto_r_com VARCHAR[140], " +
-                        "pto_l_var INTEGER[1] ," +
-                        "pto_l_com VARCHAR[140]," +
-                        "cat_r_var INTEGER[1] ," +
-                        "cat_r_com VARCHAR[140] ," +
-                        "cat_l_var INTEGER[1] ," +
-                        "cat_l_com VARCHAR[140], " +
-                        "amb_r_var INTEGER[1] ," +
-                        "amb_r_com VARCHAR[140], " +
-                        "amb_l_var INTEGER[1] ," +
-                        "amb_l_com VARCHAR[140] ," +
-                        "nys_r_var INTEGER[1] ," +
-                        "nys_r_com VARCHAR[140] ," +
-                        "nys_l_var INTEGER[1] ," +
-                        "nys_l_com VARCHAR[140] ," +
-                        "fun_r_var INTEGER[1] ," +
-                        "fun_r_com VARCHAR[140] ," +
-                        "fun_l_var INTEGER[1] ," +
-                        "fun_l_com VARCHAR[140], " +
-                        "others VARCHAR[140] ";
-
-
+        //Opening DB
         db = openOrCreateDatabase("healthcare", Context.MODE_PRIVATE, null);
         db.execSQL("CREATE TABLE IF NOT EXISTS eye (" + SQL_CREATE + ")");
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -133,7 +134,7 @@ public class EyeActivity extends ActionBarActivity {
         }
     }
 
-
+    //Method to handle radio Button selection
     public void onRadiobuttonselected(View v) {
         switch (v.getId()) {
             case R.id.RBCvis1:
@@ -338,7 +339,7 @@ public class EyeActivity extends ActionBarActivity {
 
     }
 
-
+    //Method to create a new student entry
     public void NEXT1() {
 
         if (!check1 || !check2 || !check3 || !check4 || !check5 || !check6 || !check7 || !check8 || !check8 || !check9 || !check10 || !check11 || !check12 || !check13 || !check14 || !check15 || !check16 || !check17 || !check18) {
@@ -366,6 +367,8 @@ public class EyeActivity extends ActionBarActivity {
         startActivity(S);
     }
 
+    //Method to create the dialog box
+    //@params title and message
     public void showMessage(String title, String message) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setCancelable(true);
@@ -375,6 +378,7 @@ public class EyeActivity extends ActionBarActivity {
 
     }
 
+    //Method to change intent to root activity
     public void NEXT(View view) {
         Intent i = new Intent(this, EyeContActivity.class);
         startActivity(i);

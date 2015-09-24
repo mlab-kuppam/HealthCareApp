@@ -17,10 +17,17 @@ import android.widget.Toast;
 
 public class SYS_twoActivity extends ActionBarActivity {
 
+    //Declaring sid -> studentID(must)
+    String sid;
+    //Declaring EditText in the Activity
     EditText editText1, editText2, editText3, editText4, editText5, editText6, editText7, editText8, editText9, editText10;
+    //Declaring Variable
     private int[] b = new int[50];
+    //Declaring Checks used in the Activity
     boolean check1, check2, check3, check4, check5, check6, check7 = false;
+    //Declaring DB
     SQLiteDatabase d_base;
+    //DB Query
     public String INSERT;
     public String TABLE =
             "student_id VARCHAR[20],epi_var INTEGER[1],epi_com VARCHAR[140]," +
@@ -38,8 +45,10 @@ public class SYS_twoActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sys_two);
-        studentidDialog();
 
+        //Invoking StudentID Dialog box
+        studentidDialog();
+        //Initializing EditTexts
         editText1 = (EditText) findViewById(R.id.SA2EB1);
         editText2 = (EditText) findViewById(R.id.SA2EB2);
         editText3 = (EditText) findViewById(R.id.SA2EB3);
@@ -54,7 +63,6 @@ public class SYS_twoActivity extends ActionBarActivity {
         d_base = openOrCreateDatabase("healthcare", Context.MODE_PRIVATE, null);
         d_base.execSQL("CREATE TABLE IF NOT EXISTS sys2 (" + TABLE + ")");
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -77,8 +85,12 @@ public class SYS_twoActivity extends ActionBarActivity {
         }
     }
 
-    String sid;
+    @Override
+    public void onBackPressed() {
+        backDialog();
+    }
 
+    //Method to create studentId dialog box
     public void studentidDialog() {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -130,6 +142,7 @@ public class SYS_twoActivity extends ActionBarActivity {
         //studentID.setText(AddActivity.sid);
     }
 
+    //Method to change intent to root activity
     public void Intent() {
 
         Intent i = new Intent(this, UpdateActivity.class);
@@ -137,7 +150,7 @@ public class SYS_twoActivity extends ActionBarActivity {
 
     }
 
-
+    //Method to handle radio Button selection
     public void onradioclick(View v) {
         switch (v.getId()) {
             case R.id.SA2RB1:
@@ -223,6 +236,7 @@ public class SYS_twoActivity extends ActionBarActivity {
         }
     }
 
+    //Method to create new student entry
     public void next() {
         if (!check1 || !check2 || !check3 || !check4 || !check5 || !check6 || !check7) {
             showMessage("Error", "Please enter all values");
@@ -247,6 +261,7 @@ public class SYS_twoActivity extends ActionBarActivity {
         startActivity(S);
     }
 
+    //Method to alert user about deletion of data
     public void backDialog() {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -259,7 +274,7 @@ public class SYS_twoActivity extends ActionBarActivity {
         builder.setPositiveButton("Done", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int id) {
-                backIntent();
+                Intent();
             }
         });
 
@@ -273,16 +288,8 @@ public class SYS_twoActivity extends ActionBarActivity {
         dialog.show();
     }
 
-    public void backIntent() {
-        Intent back = new Intent(this, UpdateActivity.class);
-        startActivity(back);
-    }
-
-    @Override
-    public void onBackPressed() {
-        backDialog();
-    }
-
+    //Method to create the dialog box
+    //@params title and message
     public void showMessage(String title, String message) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setCancelable(true);

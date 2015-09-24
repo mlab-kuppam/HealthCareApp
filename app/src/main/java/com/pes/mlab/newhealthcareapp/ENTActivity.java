@@ -5,25 +5,41 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Matrix;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.MediaStore;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
+
+import java.io.ByteArrayOutputStream;
+import java.io.File;
 
 
 public class ENTActivity extends ActionBarActivity {
 
-
+    //Declaring sid -> studentID(must)
+    String sid;
+    //Declaring EditText in the Activity
     EditText e1, e2, e3, e4, e5, e6, e7, e8, e9, e10, e11, e12, e13, e14, e15, e16;
+    //Declaring Variable
     public int[] ear = new int[50];
+    //Declaring Checks used in the Activity
     boolean check1, check2, check3, check4, check5, check6, check7, check8, check9, check10, check11, check12, check13, check14, check15 = false;
-
+    //Declaring DB
     SQLiteDatabase d_base;
-
+    //DB Query
+    public String INSERT;
     public String TABLE =
             "student_id VARCHAR[20],oe_r_var INTEGER," +
                     "oe_r_com VARCHAR[140]," +
@@ -57,14 +73,15 @@ public class ENTActivity extends ActionBarActivity {
                     "epi_com VARCHAR[140]," +
                     "others VARCHAR[140]";
 
-    public String INSERT;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ent);
+        //Re-Initializing pid_count for every new student
+        pic_count_ent = 0;
+        //Invoking StudentID Dialog box
         studentidDialog();
-
+        //Initializing EditTexts
         e1 = (EditText) findViewById(R.id.eT1);
         e2 = (EditText) findViewById(R.id.eT2);
         e3 = (EditText) findViewById(R.id.eT3);
@@ -81,11 +98,10 @@ public class ENTActivity extends ActionBarActivity {
         e14 = (EditText) findViewById(R.id.rhiCom);
         e15 = (EditText) findViewById(R.id.speechCom);
         e16 = (EditText) findViewById(R.id.addInfo);
-
+        //Opening DB
         d_base = openOrCreateDatabase("healthcare", Context.MODE_PRIVATE, null);
         d_base.execSQL("CREATE TABLE IF NOT EXISTS ear (" + TABLE + ")");
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -103,14 +119,20 @@ public class ENTActivity extends ActionBarActivity {
             case R.id.action_ent:
                 NEXT1();
                 return super.onOptionsItemSelected(item);
+            case R.id.action_camera:
+                capture();
+                return super.onOptionsItemSelected(item);
             default:
                 return super.onOptionsItemSelected(item);
         }
     }
 
+    @Override
+    public void onBackPressed() {
+        backDialog();
+    }
 
-    String sid;
-
+    //Method to create studentId dialog box
     public void studentidDialog() {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -169,6 +191,7 @@ public class ENTActivity extends ActionBarActivity {
         //Toast.makeText(getApplicationContext(),sid,Toast.LENGTH_LONG).show();
     }
 
+    //Method to handle radio Button selection
     public void earClick(View view) {
         switch (view.getId()) {
             case R.id.e2:
@@ -351,6 +374,7 @@ public class ENTActivity extends ActionBarActivity {
         }
     }
 
+    //Method to create new student entry
     public void NEXT1() {
 
         if (!check1 || !check2 || !check3 || !check4 || !check5 || !check6 || !check7 || !check8 || !check8 || !check9 || !check10 || !check11 || !check12 || !check13 || !check14 || !check15) {
@@ -377,6 +401,7 @@ public class ENTActivity extends ActionBarActivity {
         startActivity(S);
     }
 
+    //Method to alert user about deletion of data
     public void backDialog() {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -389,7 +414,20 @@ public class ENTActivity extends ActionBarActivity {
         builder.setPositiveButton("Done", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int id) {
-                backIntent();
+                //If the entry is cancelled, this code will delete the images of the session
+                File file = new File(Environment.getExternalStorageDirectory(), "Images");
+                if(file.exists())
+                {
+                    int x;
+                    //loop will delete all photos taken during the cancelled session
+                    for(x = 0; x < pic_count_ent; x++)
+                    {
+                        File del_image = new File(Environment.getExternalStorageDirectory()+"/Images/"+sid+"_ent_"+x+".jpg");
+                        //System.out.println("***Deleted***"+del_image.toString());
+                        del_image.delete();
+                    }
+                }
+                Intent();
             }
         });
 
@@ -403,16 +441,9 @@ public class ENTActivity extends ActionBarActivity {
         dialog.show();
     }
 
-    public void backIntent() {
-        Intent back = new Intent(this, UpdateActivity.class);
-        startActivity(back);
-    }
 
-    @Override
-    public void onBackPressed() {
-        backDialog();
-    }
-
+    //Method to create the dialog box
+    //@params title and message
     public void showMessage(String title, String message) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setCancelable(true);
@@ -421,5 +452,60 @@ public class ENTActivity extends ActionBarActivity {
         builder.show();
 
     }
+
+    //Declaration of variables only for Camera function
+    private static final int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 100;
+    //Declaration of photoId counter for ent
+    static int pic_count_ent = 0;
+    //Method -> Camera Functions
+    public void capture() {
+        //PhotoId declaration
+        String pid = sid+"_ent_"+pic_count_ent;
+        // create Intent to take a picture and return control to the calling application
+        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        // start the image capture Intent
+        File imagesFolder = new File(Environment.getExternalStorageDirectory(), "Images");
+        imagesFolder.mkdirs();
+        File image = new File(imagesFolder, pid+ ".jpg");
+        //ystem.out.println("****File_name***"+image.toString());
+        Uri uriSavedImage = Uri.fromFile(image);
+        //PhotoId counter being incremented for new photo
+        pic_count_ent++;
+        //System.out.println("****pic_count***"+pic_count);
+        intent.putExtra(MediaStore.EXTRA_OUTPUT, uriSavedImage);
+        startActivityForResult(intent, CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE);
+    }
+
+    //Result of Capture
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE && resultCode == RESULT_OK) {
+            // Image captured and saved to fileUri specified in the Intent
+
+            File imgFile = new File(Environment.getExternalStorageDirectory()+"/Images/" + sid+ ".jpg");
+            if (imgFile.exists()) {
+                //image = encodeTobase64(myBitmap);
+            }
+        } else if (resultCode == RESULT_CANCELED) {
+            // User cancelled the image capture
+            Toast.makeText(this, "Photo not saved", Toast.LENGTH_SHORT).show();
+        } else {
+            // Image capture failed, advise user
+            Toast.makeText(this, "Photo Capture Failed", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    //Method to encode to image to base 64 string for syncing
+    public String encodeTobase64(Bitmap image) {
+        System.gc();
+        if (image == null) return null;
+
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        image.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+        byte[] b = baos.toByteArray();
+        String imageEncoded = Base64.encodeToString(b, Base64.DEFAULT);
+        return imageEncoded;
+    }
+
 }
 

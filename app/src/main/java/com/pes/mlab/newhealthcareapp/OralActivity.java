@@ -16,10 +16,17 @@ import android.widget.Toast;
 
 public class OralActivity extends ActionBarActivity {
 
+    //Declaring sid -> studentID(must)
+    String sid;
+    //Declaring EditText in the Activity
     EditText editText1, editText2, editText3, editText4, editText5, editText6, editText7;
+    //Declaring Variable
     int[] b = new int[50];
+    //Declaring Checks used in the Activity
     boolean check1, check2, check3, check4, check5, check6 = false;
+    //Declaring DB
     SQLiteDatabase d_base;
+    //DB Query
     public String INSERT;
     public String TABLE =
             "student_id VARCHAR[20],anaemia_var INTEGER[1],anaemia_com VARCHAR[140]," +
@@ -35,6 +42,9 @@ public class OralActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_oral);
 
+        //Invoking StudentID Dialog box
+        studentidDialog();
+        //Initializing EditTexts
         editText1 = (EditText) findViewById(R.id.OREB1);
         editText2 = (EditText) findViewById(R.id.OREB2);
         editText3 = (EditText) findViewById(R.id.OREB3);
@@ -42,13 +52,12 @@ public class OralActivity extends ActionBarActivity {
         editText5 = (EditText) findViewById(R.id.OREB5);
         editText6 = (EditText) findViewById(R.id.OREB6);
         editText7 = (EditText) findViewById(R.id.OREB7);
-
+        //Opening DB
         d_base = openOrCreateDatabase("healthcare", Context.MODE_PRIVATE, null);
         d_base.execSQL("CREATE TABLE IF NOT EXISTS oral (" + TABLE + ")");
-        studentidDialog();
+
 
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -57,6 +66,26 @@ public class OralActivity extends ActionBarActivity {
         return true;
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        switch (item.getItemId()) {
+            case R.id.action_oral:
+                NEXT();
+                return super.onOptionsItemSelected(item);
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+        backDialog();
+    }
+
+    //Method to handle radio Button selection
     public void onRadioselect(View v) {
         switch (v.getId()) {
             case R.id.ORRB1:
@@ -130,23 +159,7 @@ public class OralActivity extends ActionBarActivity {
         }
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        switch (item.getItemId()) {
-            case R.id.action_oral:
-                NEXT();
-                return super.onOptionsItemSelected(item);
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
-
-
-    String sid;
-
+    //Method to create studentId dialog box
     public void studentidDialog() {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -198,12 +211,13 @@ public class OralActivity extends ActionBarActivity {
         //studentID.setText(AddActivity.sid);
     }
 
+    //Method to change intent to root activity
     public void Intent() {
-
         Intent i = new Intent(this, UpdateActivity.class);
         startActivity(i);
     }
 
+    //Method to create new student entry
     public void NEXT() {
         if (!check1 || !check2 || !check3 || !check4 || !check5 || !check6) {
             showMessage("Error", "Please enter all values");
@@ -225,6 +239,7 @@ public class OralActivity extends ActionBarActivity {
         startActivity(D);
     }
 
+    //Method to alert user about deletion of data
     public void backDialog() {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -237,7 +252,7 @@ public class OralActivity extends ActionBarActivity {
         builder.setPositiveButton("Done", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int id) {
-                backIntent();
+                Intent();
             }
         });
 
@@ -251,16 +266,8 @@ public class OralActivity extends ActionBarActivity {
         dialog.show();
     }
 
-    public void backIntent() {
-        Intent back = new Intent(this, UpdateActivity.class);
-        startActivity(back);
-    }
-
-    @Override
-    public void onBackPressed() {
-        backDialog();
-    }
-
+    //Method to create the dialog box
+    //@params title and message
     public void showMessage(String title, String message) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setCancelable(true);

@@ -18,19 +18,23 @@ import android.widget.Toast;
 
 public class EyeContActivity extends ActionBarActivity {
 
+    //Declaring elements in the activity
     Button btn1;
-    static String vd1, vd2, vd3, vd4, rd1, rd2, rd3, rd4, rd5, rd6, vn1, vn2, vn3, vn4, rn1, rn2, rn3, rn4, rn5, rn6;
     NumberPicker vdn1, vdn2, vdn3, vdn4, vnn1, vnn2, vnn3, vnn4, rdn1, rdn2, rdn3, rdn4, rdn5, rdn6, rnn1, rnn2, rnn3, rnn4, rnn5, rnn6;
     RelativeLayout R1;
-
-
+    //Declaring form output strings
+    static String vd1, vd2, vd3, vd4, rd1, rd2, rd3, rd4, rd5, rd6, vn1, vn2, vn3, vn4, rn1, rn2, rn3, rn4, rn5, rn6;
+    //Declaring Radio Selection variable
+    int a;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_eye_cont);
+        //Invoking StudentID Dialog box
         studentidDialog();
-
+        //Initializing variables
         EyeActivity.check = false;
+        //Initializing elements in the activity
         btn1 = (Button) findViewById(R.id.btn1);
 
         vdn1 = (NumberPicker) findViewById(R.id.numberPicker1);
@@ -55,7 +59,6 @@ public class EyeContActivity extends ActionBarActivity {
         rnn6 = (NumberPicker) findViewById(R.id.numberPicker21);
 
         R1 = (RelativeLayout) findViewById(R.id.R1);
-
 
         vdn1.setMaxValue(6);
         vdn1.setMinValue(1);
@@ -105,10 +108,7 @@ public class EyeContActivity extends ActionBarActivity {
         vnn2.setValue(6);
         vnn3.setValue(6);
         vnn4.setValue(6);
-
-
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -126,8 +126,14 @@ public class EyeContActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void NEXTEYE(View view) {
+    @Override
+    public void onBackPressed() {
+        backDialog();
+    }
 
+    //Method to INSERT content of the activity
+    //*****Implementation of errors are missing********************************************
+    public void NEXTEYE(View view) {
         if (a == 1 || a == 2) {
             vd1 = Integer.toString(vdn1.getValue());
             vd2 = Integer.toString(vdn2.getValue());
@@ -162,8 +168,7 @@ public class EyeContActivity extends ActionBarActivity {
 
     }
 
-    int a;
-
+    //Method to handle radio buttons
     public void OnRadioSelected(View v) {
         switch (v.getId()) {
             case R.id.RB1:
@@ -189,7 +194,7 @@ public class EyeContActivity extends ActionBarActivity {
     }
 
     static String sideye;
-
+    //Method to create studentId dialog box
     public void studentidDialog() {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -233,6 +238,7 @@ public class EyeContActivity extends ActionBarActivity {
         dialog.show();
     }
 
+    //Method to alert user about deletion of data
     public void backDialog() {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -245,7 +251,7 @@ public class EyeContActivity extends ActionBarActivity {
         builder.setPositiveButton("Done", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int id) {
-                backIntent();
+                Intent();
             }
         });
 
@@ -259,27 +265,15 @@ public class EyeContActivity extends ActionBarActivity {
         dialog.show();
     }
 
-    public void backIntent() {
-        Intent back = new Intent(this, UpdateActivity.class);
-        startActivity(back);
-    }
-
-    @Override
-    public void onBackPressed() {
-        backDialog();
-    }
-
     public void showError() {
         Toast.makeText(this, "Enter Student ID", Toast.LENGTH_LONG).show();
     }
 
-
+    //Method to change intent to root activity
     public void Intent() {
 
         Intent i = new Intent(this, UpdateActivity.class);
         startActivity(i);
-        //Toast.makeText(getApplicationContext(),sid,Toast.LENGTH_LONG).show();
     }
-
 
 }

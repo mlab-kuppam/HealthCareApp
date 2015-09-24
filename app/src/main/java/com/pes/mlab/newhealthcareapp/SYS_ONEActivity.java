@@ -17,12 +17,18 @@ import android.widget.Toast;
 
 public class SYS_ONEActivity extends ActionBarActivity {
 
+    //Declaring sid -> studentID(must)
+    String sid;
+    //Declaring EditText in the Activity
     EditText editText1, editText2, editText3, editText4, editText5, editText6, editText7, editText8, editText9, editText10;
-    private int[] b = new int[50];
+    //Declaring Checks used in the Activity
     boolean check1, check2, check3, check4, check5, check6, check7, check8 = false;
+    //Declaring Variabl
+    private int[] b = new int[50];
+    //Declaring DB
     SQLiteDatabase d_base;
+    //DB Query
     public String INSERT;
-
     public String TABLE =
             "student_id VARCHAR[20],lrti_var INTEGER[1],lrti_com VARCHAR[140]," +
                     "asthma_var INTEGER[1],asthma_com VARCHAR[140]," +
@@ -38,8 +44,10 @@ public class SYS_ONEActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sys__one);
-        studentidDialog();
 
+        //Invoking StudentID Dialog box
+        studentidDialog();
+        //Initializing EditTexts
         editText2 = (EditText) findViewById(R.id.SA1EB2);
         editText3 = (EditText) findViewById(R.id.SA1EB3);
         editText4 = (EditText) findViewById(R.id.SA1EB4);
@@ -49,11 +57,10 @@ public class SYS_ONEActivity extends ActionBarActivity {
         editText8 = (EditText) findViewById(R.id.SA1EB8);
         editText9 = (EditText) findViewById(R.id.SA1EB9);
         editText10 = (EditText) findViewById(R.id.SA1EB10);
-
+        //Opening DB
         d_base = openOrCreateDatabase("healthcare", Context.MODE_PRIVATE, null);
         d_base.execSQL("CREATE TABLE IF NOT EXISTS sys1 (" + TABLE + ")");
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -76,8 +83,12 @@ public class SYS_ONEActivity extends ActionBarActivity {
         }
     }
 
-    String sid;
+    @Override
+    public void onBackPressed() {
+        backDialog();
+    }
 
+    //Method to create studentId dialog box
     public void studentidDialog() {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -129,13 +140,14 @@ public class SYS_ONEActivity extends ActionBarActivity {
         //studentID.setText(AddActivity.sid);
     }
 
+    //Method to change intent to root activity
     public void Intent() {
 
         Intent i = new Intent(this, UpdateActivity.class);
         startActivity(i);
-        // Toast.makeText(getApplicationContext(),sid,Toast.LENGTH_LONG).show();
     }
 
+    //Method to handle radio Button selection
     public void onRadiobuttonselected(View v) {
         switch (v.getId()) {
            /* case R.id.SA1RB1: editText1.setVisibility(v.VISIBLE);
@@ -236,6 +248,7 @@ public class SYS_ONEActivity extends ActionBarActivity {
         }
     }
 
+    //Method to create new student entry
     public void Next() {
 
         if (!check1 || !check2 || !check3 || !check4 || !check5 || !check6 || !check7 || !check8 || !check8) {
@@ -260,6 +273,7 @@ public class SYS_ONEActivity extends ActionBarActivity {
         startActivity(D);
     }
 
+    //Method to alert user about deletion of data
     public void backDialog() {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -272,7 +286,7 @@ public class SYS_ONEActivity extends ActionBarActivity {
         builder.setPositiveButton("Done", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int id) {
-                backIntent();
+                Intent();
             }
         });
 
@@ -286,16 +300,8 @@ public class SYS_ONEActivity extends ActionBarActivity {
         dialog.show();
     }
 
-    public void backIntent() {
-        Intent back = new Intent(this, UpdateActivity.class);
-        startActivity(back);
-    }
-
-    @Override
-    public void onBackPressed() {
-        backDialog();
-    }
-
+    //Method to create the dialog box
+    //@params title and message
     public void showMessage(String title, String message) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setCancelable(true);
