@@ -151,23 +151,25 @@ public class AddActivity extends ActionBarActivity implements AdapterView.OnItem
         String date = year + "-" + month + "-" + day;
 
         //Have to make if statement efficient attnd appearing on two places
-        if (name.getText().toString().trim().length() == 0 ||
-                attnd.getText().toString().trim().length() == 0 ||
-                !check1 ||
-                grade.getText().toString().trim().length() == 0) {
-            showMessage("Error", "Please enter all values");
+        if (name.getText().toString().trim().length() == 0 ) {
+            showMessage("Error", "Please Enter Student Name");
             return;
-        } else if (std.equals("Select..")) {
-            showMessage("Error", "Complete the fields in dropdown");
+        } else if (!check1) {
+            showMessage("Error", "Please Select Gender");
             return;
-        } else if (Integer.parseInt(attnd.getText().toString().trim()) > 100 || Integer.parseInt(grade.getText().toString().trim()) > 100
-                || Integer.parseInt(grade.getText().toString().trim()) < 0 || Integer.parseInt(attnd.getText().toString().trim()) < 0) {
-            showMessage("Error", "Please enter proper percentage");
+        }else if (std.equals("Select..")) {
+            showMessage("Error", "Please Select the Standard");
             return;
-        } else if (father.getText().toString().trim().length() == 0 && guardian.getText().toString().trim().length() == 0 && mother.getText().toString().trim().length() == 0) {
-            showMessage("Error", "Please enter Father/Mother/Guardian name");
+        }else if (father.getText().toString().trim().length() == 0 && guardian.getText().toString().trim().length() == 0 && mother.getText().toString().trim().length() == 0) {
+            showMessage("Error", "Please Enter Father/Mother/Guardian name");
             return;
-        } else {
+        }else if (Integer.parseInt(attnd.getText().toString().trim()) > 100 || Integer.parseInt(attnd.getText().toString().trim()) < 0) {
+            showMessage("Error", "Please Enter Valid Attendance");
+            return;
+        }else if (Integer.parseInt(grade.getText().toString().trim()) > 100 || Integer.parseInt(grade.getText().toString().trim()) < 0) {
+            showMessage("Error", "Please Enter Valid Percentage");
+            return;
+        }else {
             //If the required fields are filled then the DB is updated
             db.execSQL("INSERT INTO child VALUES('" + sid + "','" + SchoolAddActivity.school_id + "','" + name.getText() + "','" + date + "','" + genderString + "','" + std + "','" + father.getText() + "','" + mother.getText() + "','" + guardian.getText() + "','" + attnd.getText() + "','" + grade.getText() + "');");
             showMessage("Success", "Record added");

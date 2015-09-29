@@ -11,10 +11,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 
 //import android.support.v7.app.ActionBarActivity;
 
@@ -88,8 +91,8 @@ public class MainActivity extends Activity {
         if (check) {
             String t = "";
             ArrayList<String> tablenames = new ArrayList<String>();
+            LinkedHashMap json_fin = new LinkedHashMap();
             try {
-                JSONObject json_fin = new JSONObject();
 
                 Cursor r = db.rawQuery("SELECT name FROM sqlite_master WHERE type='table'", null);
 
@@ -106,9 +109,9 @@ public class MainActivity extends Activity {
                     Cursor c = db.rawQuery(q, null);
                     c.moveToFirst();
                     if (c != null) {
-                        JSONArray array = new JSONArray();
+                        ArrayList array = new ArrayList();
                         do {
-                            JSONObject rows = new JSONObject();
+                            LinkedHashMap rows = new LinkedHashMap();
 
                             for (int l = 0; l < c.getColumnCount(); l++) {
                                 String name = c.getColumnName(l);
@@ -127,7 +130,7 @@ public class MainActivity extends Activity {
                                         break;
                                 }
                             }
-                            array.put(rows);
+                            array.add(rows);
                         } while (c.moveToNext());
                         c.close();
                         json_fin.put(tablenames.get(i), array);
@@ -135,21 +138,20 @@ public class MainActivity extends Activity {
                 }
 
                 t = json_fin.toString();
-            } catch (JSONException e) {
-                e.printStackTrace();
-            } catch (Exception e) {
+            }
+            catch (Exception e) {
                 e.printStackTrace();
             }
 
             if (!t.equals("{}")) {
                 GetXMLTask get = new GetXMLTask();
-                get.execute(new String[]{t});
-                /*for (int i = 0; i < tablenames.size(); i++) {
+                get.execute(new LinkedHashMap[]{json_fin});
+                for (int i = 0; i < tablenames.size(); i++) {
                     db.execSQL("DROP TABLE IF EXISTS " + tablenames.get(i));
-                }*/
-            }/* else {
+                }
+            } else {
                 Toast.makeText(getApplicationContext(), "No Entries found", Toast.LENGTH_LONG).show();
-            }*/
+            }
         } else {
             showMessage("Check Internert Connection", "Try again");
         }

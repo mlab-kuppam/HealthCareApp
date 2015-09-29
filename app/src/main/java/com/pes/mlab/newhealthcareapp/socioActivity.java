@@ -174,26 +174,60 @@ public class socioActivity extends ActionBarActivity implements AdapterView.OnIt
     private void ADDNEWSTUDENT() {
 
         boolean a = aadhar.getText().toString().trim().length() == 0 || aadhar.getText().toString().trim().length() == 12;
-        if (village.getText().toString().trim().length() == 0 ||
-                post.getText().toString().trim().length() == 0 || !check1 ||
-                number.getText().toString().trim().length() == 0) {
-            showMessage("Error", "Please enter all values");
+        if (village.getText().toString().trim().length() == 0 ) {
+            showMessage("Error", "Please Enter the Name of the Village");
             return;
-        } else if (!a) {
-            showMessage("Error", "Please enter a valid Aadhar number");
-        } else if (n_mandal.equals("Select..") || n_familyType.equals("Select..") || n_familyHead.equals("Select..") ||
-                n_education.equals("Select..") || n_occupation.equals("Select..") || n_eduFather.equals("Select..") ||
-                n_occFather.equals("Select..") || n_eduMother.equals("Select..") || n_occMother.equals("Select..") ||
-                n_income.equals("Select..") || n_socioClass.equals("Select..")) {
-            showMessage("Error", "Complete the fields in dropdown");
+        }else if (post.getText().toString().trim().length() == 0) {
+            showMessage("Error", "Please Enter the Name of the Nearest Post Office");
             return;
-        } else if (!((mobile.getText().toString().trim().length() == 10 && landline.getText().toString().trim().length() == 0)
+        }else if (n_mandal.equals("Select..")) {
+            showMessage("Error", "Please Select Mandal");
+            return;
+        }else if (!((mobile.getText().toString().trim().length() == 10 && landline.getText().toString().trim().length() == 0)
                 || (landline.getText().toString().trim().length() == 10 && mobile.getText().toString().trim().length() == 0)
-                || (landline.getText().toString().trim().length() == 10 && mobile.getText().toString().trim().length() == 10)
-        )) {
+                || (landline.getText().toString().trim().length() == 10 && mobile.getText().toString().trim().length() == 10))){
             showMessage("Error", "Please enter a valid Mobile/Landline number");
             return;
-        } else {
+        }else if ( n_familyType.equals("Select..")) {
+            showMessage("Error", "Please Select Type of Family");
+            return;
+        }else if (number.getText().toString().trim().length() == 0) {
+            showMessage("Error", "Please Enter Number of Memebers in the Family");
+            return;
+        }else if ( n_familyHead.equals("Select..")) {
+            showMessage("Error", "Please Select Head of the Family");
+            return;
+        }else if (!a) {
+            showMessage("Error", "Please Enter a Valid Aadhar number");
+            return;
+        }else if (n_education.equals("Select..") ) {
+            showMessage("Error", "Please Select the Head's Educational Qualification");
+            return;
+        }else if (n_occupation.equals("Select..")) {
+            showMessage("Error", "Please Select the Head's Occupation");
+            return;
+        }else if (n_eduFather.equals("Select..")) {
+            showMessage("Error", "Please Select Father's Educational Qualification");
+            return;
+        }else if (n_occFather.equals("Select..")) {
+            showMessage("Error", "Please Select Father's Occupation");
+            return;
+        }else if (n_eduMother.equals("Select..")) {
+            showMessage("Error", "Please Select Mother's Educational Qualification");
+            return;
+        }else if (n_occMother.equals("Select..")) {
+            showMessage("Error", "Please Select Father's Occupation");
+            return;
+        }else if (n_income.equals("Select..")) {
+            showMessage("Error", "Please Select Total Income of the Family");
+            return;
+        }else if (n_socioClass.equals("Select..")) {
+            showMessage("Error", "Please Select Socio-Economic Class of the Family");
+            return;
+        }else if (!check1) {
+            showMessage("Error", "Please Select Health Details of Home");
+            return;
+        }else {
             db.execSQL("INSERT INTO socio_demographic VALUES('" + AddActivity.sid + "','" + village.getText() + "','" + post.getText() + "','" + n_mandal + "','" + landline.getText() + "','"
                     + mobile.getText() + "','" + n_familyType + "','" + number.getText() + "','" + n_familyHead + "','" + aadhar.getText() + "','" + n_education
                     + "','" + n_occupation + "','" + n_eduFather + "','" + n_occFather + "','" + n_eduMother + "','" + n_occMother + "','" + n_income + "','" + n_socioClass + "','" + health + "','" + com.getText() + "','" + treatment.getText() + "');");

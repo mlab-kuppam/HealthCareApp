@@ -467,7 +467,7 @@ public class ENTActivity extends ActionBarActivity {
         File imagesFolder = new File(Environment.getExternalStorageDirectory(), "Images");
         imagesFolder.mkdirs();
         File image = new File(imagesFolder, pid+ ".jpg");
-        //ystem.out.println("****File_name***"+image.toString());
+        //System.out.println("****File_name***"+image.toString());
         Uri uriSavedImage = Uri.fromFile(image);
         //PhotoId counter being incremented for new photo
         pic_count_ent++;

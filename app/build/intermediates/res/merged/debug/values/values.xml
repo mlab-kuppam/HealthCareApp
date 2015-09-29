@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/F:/GitHub_Repo/HealthCareApp/app/src/main/res/values/strings.xml -->
+    <!-- From: file:/C:/Users/Aamir%20Hasan/Documents/GitHub/HealthCareApp/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string-array name="catergories">
         <item>Select..</item>
@@ -96,7 +96,7 @@
         <item>I</item>
         <item>II</item>
     </string-array>
-    <!-- From: file:/F:/GitHub_Repo/HealthCareApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
+    <!-- From: file:/C:/Users/Aamir%20Hasan/Documents/GitHub/HealthCareApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
     <eat-comment/>
     <attr format="reference" name="drawerArrowStyle"/>
     <attr format="dimension" name="height"/>
@@ -217,11 +217,11 @@
     <dimen name="abc_text_size_subtitle_material_toolbar">16dp</dimen>
     <dimen name="abc_text_size_title_material">20sp</dimen>
     <dimen name="abc_text_size_title_material_toolbar">20dp</dimen>
-    <!-- From: file:/F:/GitHub_Repo/HealthCareApp/app/src/main/res/values/dimens.xml -->
+    <!-- From: file:/C:/Users/Aamir%20Hasan/Documents/GitHub/HealthCareApp/app/src/main/res/values/dimens.xml -->
     <eat-comment/>
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
-    <!-- From: file:/F:/GitHub_Repo/HealthCareApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
+    <!-- From: file:/C:/Users/Aamir%20Hasan/Documents/GitHub/HealthCareApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
     <eat-comment/>
     <item name="dialog_fixed_height_major" type="dimen">80%</item>
     <item name="dialog_fixed_height_minor" type="dimen">100%</item>
@@ -239,7 +239,7 @@
     <item name="split_action_bar" type="id"/>
     <item name="up" type="id"/>
     <integer name="abc_max_action_buttons">2</integer>
-    <!-- From: file:/F:/GitHub_Repo/HealthCareApp/app/src/main/res/values/strings.xml -->
+    <!-- From: file:/C:/Users/Aamir%20Hasan/Documents/GitHub/HealthCareApp/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="Add"><b>Additional Information:</b></string>
     <string name="Allergy"><b>Allergic Conjunctivitis (vernal catarrh):</b></string>
@@ -294,7 +294,7 @@
     <string name="Tin"><b>Tinea curis/corporis:</b></string>
     <string name="Viral"><b>Viral warts:</b></string>
     <string name="Vistest"><b><u>Vision Testing:</u></b></string>
-    <!-- From: file:/F:/GitHub_Repo/HealthCareApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
+    <!-- From: file:/C:/Users/Aamir%20Hasan/Documents/GitHub/HealthCareApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
     <eat-comment/>
     <string name="abc_action_bar_home_description">Navigate home</string>
     <string name="abc_action_bar_home_description_format">%1$s, %2$s</string>
@@ -312,7 +312,7 @@
     <string name="abc_shareactionprovider_share_with">Share with</string>
     <string name="abc_shareactionprovider_share_with_application">Share with %s</string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
-    <!-- From: file:/F:/GitHub_Repo/HealthCareApp/app/src/main/res/values/strings.xml -->
+    <!-- From: file:/C:/Users/Aamir%20Hasan/Documents/GitHub/HealthCareApp/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="amblyopia"><b>Ambyopia (concomitant sqint):</b></string>
     <string name="bit"><b>Bitot\'s spots:</b></string>
@@ -451,14 +451,14 @@
     <string name="title_activity_update">Options</string>
     <string name="trimmed">Trimmed</string>
     <string name="yes">Yes</string>
-    <!-- From: file:/F:/GitHub_Repo/HealthCareApp/app/src/main/res/values/styles.xml -->
+    <!-- From: file:/C:/Users/Aamir%20Hasan/Documents/GitHub/HealthCareApp/app/src/main/res/values/styles.xml -->
     <eat-comment/>
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
         <item name="android:datePickerStyle">@android:style/Widget.DatePicker</item>
         <item name="android:textColor">#ff000000</item>
        </style>
-    <!-- From: file:/F:/GitHub_Repo/HealthCareApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
+    <!-- From: file:/C:/Users/Aamir%20Hasan/Documents/GitHub/HealthCareApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
     <eat-comment/>
     <style name="Base.TextAppearance.AppCompat" parent="android:TextAppearance">
         <item name="android:textColor">?android:textColorPrimary</item>
@@ -1212,7 +1212,7 @@
         <item name="android:scaleType">center</item>
         <item name="android:background">?attr/selectableItemBackground</item>
     </style>
-    <!-- From: file:/F:/GitHub_Repo/HealthCareApp/app/src/main/res/values/styles.xml -->
+    <!-- From: file:/C:/Users/Aamir%20Hasan/Documents/GitHub/HealthCareApp/app/src/main/res/values/styles.xml -->
     <eat-comment/>
     <style name="Delimiter">
         <item name="android:layout_width">2dp</item>
@@ -1224,7 +1224,7 @@
         <item name="android:layout_height">3dp</item>
         <item name="android:background">@android:color/darker_gray</item>
     </style>
-    <!-- From: file:/F:/GitHub_Repo/HealthCareApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
+    <!-- From: file:/C:/Users/Aamir%20Hasan/Documents/GitHub/HealthCareApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
     <eat-comment/>
     <style name="Platform.AppCompat" parent="android:Theme">
         <item name="android:windowNoTitle">true</item>
@@ -1392,14 +1392,14 @@
     <style name="RtlOverlay.Widget.AppCompat.SearchView.MagIcon" parent="android:Widget">
         <item name="android:layout_marginLeft">@dimen/abc_dropdownitem_text_padding_left</item>
     </style>
-    <!-- From: file:/F:/GitHub_Repo/HealthCareApp/app/src/main/res/values/styles.xml -->
+    <!-- From: file:/C:/Users/Aamir%20Hasan/Documents/GitHub/HealthCareApp/app/src/main/res/values/styles.xml -->
     <eat-comment/>
     <style name="Separator">
         <item name="android:layout_width">2dp</item>
         <item name="android:layout_height">120dp</item>
         <item name="android:background">@android:color/darker_gray</item>
     </style>
-    <!-- From: file:/F:/GitHub_Repo/HealthCareApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
+    <!-- From: file:/C:/Users/Aamir%20Hasan/Documents/GitHub/HealthCareApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
     <eat-comment/>
     <style name="TextAppearance.AppCompat" parent="Base.TextAppearance.AppCompat"/>
     <style name="TextAppearance.AppCompat.Body1" parent="Base.TextAppearance.AppCompat.Body1"/>

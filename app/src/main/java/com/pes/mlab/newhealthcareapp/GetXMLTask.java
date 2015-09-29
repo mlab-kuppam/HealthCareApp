@@ -15,28 +15,33 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
 
-class GetXMLTask extends AsyncTask<String, Void, String> {
-    @Override
-    protected String doInBackground(String... params) {
+import com.google.gson.Gson;
 
-        String trial = params[0];
+class GetXMLTask extends AsyncTask<LinkedHashMap, Void, String> {
+    @Override
+    protected String doInBackground(LinkedHashMap ... params) {
+
+        LinkedHashMap trial = params[0];
 
         HttpClient httpClient = new DefaultHttpClient();
         HttpPost httpPost;
         // In a POST request, we don't pass the values in the UL.
         //Therefore we use only the web page URL as the parameter of the HttpPost argument
-        httpPost = new HttpPost("http://192.168.1.6/trial.php");
+        httpPost = new HttpPost("http://192.168.1.6/sync.php");
 
-        System.out.println("j=" + trial);
+        String j=null;
+        Gson gson = new Gson();
+        j = gson.toJson(trial, LinkedHashMap.class);
 
 
         // Because we are not passing values over the URL, we should have a mechanism to pass the values that can be
         //uniquely separate by the other end.
         //To achieve that we use BasicNameValuePair
         //Things we need to pass with the POST request
-        BasicNameValuePair usernameBasicNameValuePair = new BasicNameValuePair("j", trial);
+        BasicNameValuePair usernameBasicNameValuePair = new BasicNameValuePair("j", j);
         //System.out.println(trial);
 
         // We add the content that we want to pass with the POST request to as name-value pairs
@@ -76,10 +81,10 @@ class GetXMLTask extends AsyncTask<String, Void, String> {
                 return stringBuilder.toString();
 
             } catch (ClientProtocolException cpe) {
-                System.out.println("First Exception caz of HttpResponese :" + cpe);
+                System.out.println("First Exception because of HttpResponese :" + cpe);
                 cpe.printStackTrace();
             } catch (IOException ioe) {
-                System.out.println("Second Exception caz of HttpResponse :" + ioe);
+                System.out.println("Second Exception because of HttpResponse :" + ioe);
                 ioe.printStackTrace();
             }
 
@@ -93,6 +98,7 @@ class GetXMLTask extends AsyncTask<String, Void, String> {
 
     @Override
     protected void onPostExecute(String output) {
+
         System.out.println(output);
     }
 }
