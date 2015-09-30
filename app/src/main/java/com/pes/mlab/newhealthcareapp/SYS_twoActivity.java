@@ -24,7 +24,7 @@ public class SYS_twoActivity extends ActionBarActivity {
     //Declaring Variable
     private int[] b = new int[50];
     //Declaring Checks used in the Activity
-    boolean check1, check2, check3, check4, check5, check6, check7 = false;
+    boolean check1, check2, check3, check4, check5, check6, check7;
     //Declaring DB
     SQLiteDatabase d_base;
     //DB Query
@@ -59,6 +59,8 @@ public class SYS_twoActivity extends ActionBarActivity {
         editText8 = (EditText) findViewById(R.id.SA2EB8);
         editText9 = (EditText) findViewById(R.id.SA2EB9);
         editText10 = (EditText) findViewById(R.id.SA2EB10);
+
+        check1= check2=check3= check4= check5=check6=check7=false;
 
         d_base = openOrCreateDatabase("healthcare", Context.MODE_PRIVATE, null);
         d_base.execSQL("CREATE TABLE IF NOT EXISTS sys2 (" + TABLE + ")");
@@ -238,8 +240,26 @@ public class SYS_twoActivity extends ActionBarActivity {
 
     //Method to create new student entry
     public void next() {
-        if (!check1 || !check2 || !check3 || !check4 || !check5 || !check6 || !check7) {
-            showMessage("Error", "Please enter all values");
+        if (!check1){
+            showMessage("Error", "Please Select an Option for "+R.string.SA2TB2);
+            return;
+        }else if (!check2){
+            showMessage("Error", "Please Select an Option for Behavioral Problems");
+            return;
+        }else if (!check3){
+            showMessage("Error", "Please Select an Option for "+R.string.SA2TB5);
+            return;
+        }else if (!check4){
+            showMessage("Error", "Please Select an Option for "+R.string.SA2TB7);
+            return;
+        }else if (!check5){
+            showMessage("Error", "Please Select an Option for "+R.string.SA2TB8);
+            return;
+        }else if (!check6){
+            showMessage("Error", "Please Select an Option for Other Infectious Diseases");
+            return;
+        }else if (!check7){
+            showMessage("Error", "Please Select an Option for Injuries");
             return;
         }
 

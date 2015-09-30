@@ -22,7 +22,7 @@ public class SYS_ONEActivity extends ActionBarActivity {
     //Declaring EditText in the Activity
     EditText editText1, editText2, editText3, editText4, editText5, editText6, editText7, editText8, editText9, editText10;
     //Declaring Checks used in the Activity
-    boolean check1, check2, check3, check4, check5, check6, check7, check8 = false;
+    boolean check1, check2, check3, check4, check5, check6, check7, check8 ;
     //Declaring Variabl
     private int[] b = new int[50];
     //Declaring DB
@@ -57,6 +57,9 @@ public class SYS_ONEActivity extends ActionBarActivity {
         editText8 = (EditText) findViewById(R.id.SA1EB8);
         editText9 = (EditText) findViewById(R.id.SA1EB9);
         editText10 = (EditText) findViewById(R.id.SA1EB10);
+
+        check1= check2=check3= check4= check5=check6=check7= check8=false;
+
         //Opening DB
         d_base = openOrCreateDatabase("healthcare", Context.MODE_PRIVATE, null);
         d_base.execSQL("CREATE TABLE IF NOT EXISTS sys1 (" + TABLE + ")");
@@ -242,17 +245,35 @@ public class SYS_ONEActivity extends ActionBarActivity {
                 b[7] = 0;
                 check8 = true;
                 break;
-
-            default:
-                break;
         }
     }
 
     //Method to create new student entry
     public void Next() {
 
-        if (!check1 || !check2 || !check3 || !check4 || !check5 || !check6 || !check7 || !check8 || !check8) {
-            showMessage("Error", "Please enter all values");
+        if (!check1) {
+            showMessage("Error", "Please Select an Option for "+R.string.SA1TB3);
+            return;
+        }else if (!check2) {
+            showMessage("Error", "Please Select an Option for "+R.string.SA1TB4);
+            return;
+        }else if (!check3) {
+            showMessage("Error", "Please Select an Option for "+R.string.SA1TB5);
+            return;
+        }else if (!check4) {
+            showMessage("Error", "Please Select an Option for "+R.string.SA1TB7);
+            return;
+        }else if (!check5) {
+            showMessage("Error", "Please Select an Option for "+R.string.SA1TB8);
+            return;
+        }else if (!check6) {
+            showMessage("Error", "Please Select an Option for "+R.string.oth+" in GastroIntestinal System");
+            return;
+        }else if (!check7) {
+            showMessage("Error", "Please Select an Option for "+R.string.SA1TB10);
+            return;
+        }else if (!check8) {
+            showMessage("Error", "Please Select an Option for "+R.string.SA1TB11);
             return;
         }
 

@@ -377,8 +377,50 @@ public class ENTActivity extends ActionBarActivity {
     //Method to create new student entry
     public void NEXT1() {
 
-        if (!check1 || !check2 || !check3 || !check4 || !check5 || !check6 || !check7 || !check8 || !check8 || !check9 || !check10 || !check11 || !check12 || !check13 || !check14 || !check15) {
-            showMessage("Error", "Please enter all values");
+        if (!check1){
+            showMessage("Error", "Please Select an Option for "+R.string.e1+ " for Right Ear");
+            return;
+        }else if (!check2){
+            showMessage("Error", "Please Select an Option for "+R.string.e1+ " for Left Ear)");
+            return;
+        }else if (!check3){
+            showMessage("Error", "Please Select an Option for "+R.string.e2+ " for Right Ear");
+            return;
+        }else if (!check4){
+            showMessage("Error", "Please Select an Option for "+R.string.e2+ " for Left Ear");
+            return;
+        }else if (!check5){
+            showMessage("Error", "Please Select an Option for "+R.string.e3+ " for Right Ear");
+            return;
+        }else if (!check6){
+            showMessage("Error", "Please Select an Option for "+R.string.e3+ " for Left Ear");
+            return;
+        }else if (!check7){
+            showMessage("Error", "Please Select an Option for "+R.string.e4+ " for Right Ear");
+            return;
+        }else if (!check8){
+            showMessage("Error", "Please Select an Option for "+R.string.e4+ " for Left Ear");
+            return;
+        }else if (!check9){
+            showMessage("Error", "Please Select an Option for "+R.string.e5+ " for Right Ear");
+            return;
+        }else if (!check10){
+            showMessage("Error", "Please Select an Option for "+R.string.e5+ " for Left Ear");
+            return;
+        }else if (!check11){
+            showMessage("Error", "Please Select an Option for "+R.string.e6);
+            return;
+        }else if (!check12){
+            showMessage("Error", "Please Select an Option for "+R.string.e7);
+            return;
+        }else if (!check13){
+            showMessage("Error", "Please Select an Option for "+R.string.e8);
+            return;
+        }else if (!check14){
+            showMessage("Error", "Please Select an Option for "+R.string.e9);
+            return;
+        }else if (!check15){
+            showMessage("Error", "Please Select an Option for "+R.string.e10);
             return;
         }
 

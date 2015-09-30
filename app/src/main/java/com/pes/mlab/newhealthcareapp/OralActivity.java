@@ -24,7 +24,7 @@ public class OralActivity extends ActionBarActivity {
     //Declaring Variable
     int[] b = new int[50];
     //Declaring Checks used in the Activity
-    boolean check1, check2, check3, check4, check5, check6 = false;
+    boolean check1, check2, check3, check4, check5, check6;
     //Declaring DB
     SQLiteDatabase d_base;
     //DB Query
@@ -53,6 +53,7 @@ public class OralActivity extends ActionBarActivity {
         editText5 = (EditText) findViewById(R.id.OREB5);
         editText6 = (EditText) findViewById(R.id.OREB6);
         editText7 = (EditText) findViewById(R.id.OREB7);
+        check1=check2=check3=check4=check5=check6=false;
         //Opening DB
         d_base = openOrCreateDatabase("healthcare", Context.MODE_PRIVATE, null);
         d_base.execSQL("CREATE TABLE IF NOT EXISTS oral (" + TABLE + ")");
@@ -220,8 +221,23 @@ public class OralActivity extends ActionBarActivity {
 
     //Method to create new student entry
     public void NEXT() {
-        if (!check1 || !check2 || !check3 || !check4 || !check5 || !check6) {
-            showMessage("Error", "Please enter all values");
+        if (!check1 ){
+            showMessage("Error", "Please Select an Option for "+R.string.ORTB1);
+            return;
+        }else if (!check2) {
+            showMessage("Error", "Please Select an Option for "+R.string.ORTB3);
+            return;
+        }else if (!check3) {
+            showMessage("Error", "Please Select an Option for "+R.string.ORTB4);
+            return;
+        }else if (!check4) {
+            showMessage("Error", "Please Select an Option for "+R.string.ORTB5);
+            return;
+        }else if (!check5) {
+            showMessage("Error", "Please Select an Option for "+R.string.ORTB6);
+            return;
+        }else if (!check6) {
+            showMessage("Error", "Please Select an Option for "+R.string.ORTB7);
             return;
         }
 

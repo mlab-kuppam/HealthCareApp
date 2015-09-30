@@ -20,7 +20,8 @@ public class HealthActivity extends ActionBarActivity {
     //Declaring sid -> studentID(must)
     String sid;
     //Declaring Variables
-    int nails = 10, groom = 10, bath = 10, oralcare = 10;
+    int nails , groom, bath, oralcare;
+    boolean check1,check2,check3,check4;
     //Declaring EditText in the Activity
     EditText editText1, editText2, editText3, editText4, editText5, editText6, editText7, editText8;
     //Declaring DB
@@ -51,6 +52,9 @@ public class HealthActivity extends ActionBarActivity {
         editText6 = (EditText) findViewById(R.id.rrate);
         editText7 = (EditText) findViewById(R.id.systole);
         editText8 = (EditText) findViewById(R.id.diastole);
+
+        nails=1;groom=1;bath=1;oralcare=1;check1=false;check2=false;check3=false;check4=false;
+
         //Opening DB
         db = openOrCreateDatabase("healthcare", Context.MODE_PRIVATE, null);
         db.execSQL("CREATE TABLE IF NOT EXISTS health (" + TABLE + ")");
@@ -153,27 +157,35 @@ public class HealthActivity extends ActionBarActivity {
         switch (v.getId()) {
             case R.id.x1:
                 nails = 1;
+                check1=true;
                 break;
             case R.id.x2:
                 nails = 0;
+                check1=true;
                 break;
             case R.id.x3:
                 bath = 1;
+                check2=true;
                 break;
             case R.id.x4:
                 bath = 0;
+                check2=true;
                 break;
             case R.id.x5:
                 groom = 1;
+                check3=true;
                 break;
             case R.id.x6:
                 groom = 0;
+                check3=true;
                 break;
             case R.id.x7:
                 oralcare = 1;
+                check4=true;
                 break;
             case R.id.x8:
                 oralcare = 0;
+                check4=true;
                 break;
         }
     }
@@ -181,16 +193,41 @@ public class HealthActivity extends ActionBarActivity {
     //Method to create new student entry
     public void NEXT() {
 
-        if (editText1.getText().toString().length() == 0 ||
-                editText2.getText().toString().length() == 0 ||
-                editText3.getText().toString().length() == 0 ||
-                editText4.getText().toString().length() == 0 ||
-                editText5.getText().toString().length() == 0 ||
-                editText6.getText().toString().length() == 0 ||
-                editText7.getText().toString().length() == 0 ||
-                editText8.getText().toString().length() == 0) {
-
-            showMessage("Error", "Please enter all values");
+        if (editText1.getText().toString().length() == 0) {
+            showMessage("Error", "Please Enter "+R.string.hA1);
+            return;
+        }else if (editText2.getText().toString().length() == 0) {
+            showMessage("Error", "Please Enter "+R.string.hA2);
+            return;
+        }else if (editText3.getText().toString().length() == 0) {
+            showMessage("Error", "Please Enter "+R.string.hA3);
+            return;
+        }else if (editText4.getText().toString().length() == 0) {
+            showMessage("Error", "Please Enter "+R.string.hA4);
+            return;
+        }else if (editText5.getText().toString().length() == 0) {
+            showMessage("Error", "Please Enter "+R.string.hA6);
+            return;
+        }else if (editText6.getText().toString().length() == 0) {
+            showMessage("Error", "Please Enter "+R.string.hA7);
+            return;
+        }else if (editText7.getText().toString().length() == 0) {
+            showMessage("Error", "Please Enter "+R.string.hA8+":"+R.string.hA9);
+            return;
+        }else if (editText8.getText().toString().length() == 0) {
+            showMessage("Error", "Please Enter "+R.string.hA8+":"+R.string.hA10);
+            return;
+        }else if (!check1) {
+            showMessage("Error", "Please Select an Option for "+R.string.hA12);
+            return;
+        }else if (!check2) {
+            showMessage("Error", "Please Select an Option for "+R.string.hA13);
+            return;
+        }else if (!check3) {
+            showMessage("Error", "Please Select an Option for "+R.string.hA14);
+            return;
+        }else if (!check4) {
+            showMessage("Error", "Please Select an Option for "+R.string.hA15);
             return;
         }
 

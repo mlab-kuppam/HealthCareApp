@@ -22,7 +22,7 @@ public class SkinActivity extends ActionBarActivity {
     //Declaring EditText in the Activity
     EditText Scabtext, Pityaltext, Phrynotext, Pedicultext, Pityvertext, Imptext, Paputext, Tintext, Miltext, Viraltext, Other;
     //Declaring Checks used in the Activity
-    boolean check1, check2, check3, check4, check5, check6, check7, check8, check9, check10 = false;
+    boolean check1, check2, check3, check4, check5, check6, check7, check8, check9, check10;
     //Declaring Variable
     private int[] checkarr = new int[50];
     //Declaring DB
@@ -61,6 +61,9 @@ public class SkinActivity extends ActionBarActivity {
         Miltext = (EditText) findViewById(R.id.editText9);
         Viraltext = (EditText) findViewById(R.id.editText10);
         Other = (EditText) findViewById(R.id.editText11);
+
+        check1= check2=check3= check4= check5=check6=check7= check8= check9= check10=false;
+
         //Opening DB
         d_base = openOrCreateDatabase("healthcare", Context.MODE_PRIVATE, null);
         d_base.execSQL("CREATE TABLE IF NOT EXISTS skin (" + TABLE + ")");
@@ -271,8 +274,35 @@ public class SkinActivity extends ActionBarActivity {
 
     //Method to create new student entry
     public void NEXT() {
-        if (!check1 || !check2 || !check3 || !check4 || !check5 || !check6 || !check7 || !check8 || !check8 || !check9 || !check10) {
-            showMessage("Error", "Please enter all values");
+        if (!check1) {
+            showMessage("Error", "Please Select an Option for "+R.string.Scabies);
+            return;
+        }else if (!check2) {
+            showMessage("Error", "Please Select an Option for "+R.string.Pytalba);
+            return;
+        }else if (!check3) {
+            showMessage("Error", "Please Select an Option for "+R.string.Pderma);
+            return;
+        }else if (!check4) {
+            showMessage("Error", "Please Select an Option for "+R.string.Peculosis);
+            return;
+        }else if (!check5) {
+            showMessage("Error", "Please Select an Option for "+R.string.Pcolour);
+            return;
+        }else if (!check6) {
+            showMessage("Error", "Please Select an Option for "+R.string.Imp);
+            return;
+        }else if (!check7) {
+            showMessage("Error", "Please Select an Option for "+R.string.Papcaria);
+            return;
+        }else if (!check8) {
+            showMessage("Error", "Please Select an Option for "+R.string.Tin);
+            return;
+        }else if (!check9) {
+            showMessage("Error", "Please Select an Option for "+R.string.Mil);
+            return;
+        }else if (!check10) {
+            showMessage("Error", "Please Select an Option for "+R.string.Viral);
             return;
         }
 
