@@ -56,7 +56,7 @@ public class AddActivity extends ActionBarActivity implements AdapterView.OnItem
             "PRIMARY KEY(student_id));";
 
     //Boolean to check Radio Buttons are checked
-    public boolean check1 = false;
+    public boolean check1;
 
     //Form outputs as String
     String genderString;
@@ -99,6 +99,8 @@ public class AddActivity extends ActionBarActivity implements AdapterView.OnItem
         grade = (EditText) findViewById(R.id.grade);
         //Setting default date in the Datepicker
         dp.init(1997, 00, 01, null);
+
+        check1=false;
 
         //ArrayAdapter for Dropdown menu (Spinner)
         ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(this,

@@ -35,7 +35,7 @@ public class ENTActivity extends ActionBarActivity {
     //Declaring Variable
     public int[] ear = new int[50];
     //Declaring Checks used in the Activity
-    boolean check1, check2, check3, check4, check5, check6, check7, check8, check9, check10, check11, check12, check13, check14, check15 = false;
+    boolean check1, check2, check3, check4, check5, check6, check7, check8, check9, check10, check11, check12, check13, check14, check15;
     //Declaring DB
     SQLiteDatabase d_base;
     //DB Query
@@ -98,6 +98,9 @@ public class ENTActivity extends ActionBarActivity {
         e14 = (EditText) findViewById(R.id.rhiCom);
         e15 = (EditText) findViewById(R.id.speechCom);
         e16 = (EditText) findViewById(R.id.addInfo);
+
+        check1= check2= check3= check4= check5= check6= check7= check8= check9= check10= check11= check12= check13= check14= check15=false;
+
         //Opening DB
         d_base = openOrCreateDatabase("healthcare", Context.MODE_PRIVATE, null);
         d_base.execSQL("CREATE TABLE IF NOT EXISTS ear (" + TABLE + ")");

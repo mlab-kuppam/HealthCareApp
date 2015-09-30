@@ -25,7 +25,7 @@ public class socioActivity extends ActionBarActivity implements AdapterView.OnIt
     //Form outputs as String
     String n_mandal, n_familyType, n_familyHead, n_education, n_occupation, n_income, n_eduFather, n_occFather, n_eduMother, n_occMother, n_socioClass;
     //Boolean to check Health field
-    boolean check1 = false;
+    boolean check1;
     //Declaring variables
     int health;
 
@@ -92,6 +92,8 @@ public class socioActivity extends ActionBarActivity implements AdapterView.OnIt
         occMother = (Spinner) findViewById(R.id.OccupationMother);
         income = (Spinner) findViewById(R.id.Income);
         socioClass = (Spinner) findViewById(R.id.socioClass);
+
+        check1=false;
 
         //ArrayAdapters for spinners
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
