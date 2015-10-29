@@ -1,5 +1,0 @@
-F:\Aamir Important\Kuppam\HealthCareApp\app\build\intermediates\classes\debug
-F:\Aamir Important\Kuppam\HealthCareApp\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.3-9e24cb0354836ba67bd4580c50685407639d18dd.jar
-F:\Aamir Important\Kuppam\HealthCareApp\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-32b0a313b100f72536ed32ccb0fa4787adefe01a.jar
-F:\Aamir Important\Kuppam\HealthCareApp\app\build\intermediates\pre-dexed\debug\classes-58d015064da57f57af4f70744a89b2fb1a68de93.jar
-F:\Aamir Important\Kuppam\HealthCareApp\app\build\intermediates\pre-dexed\debug\classes-7f7e78eeb1f292d742390e127bf4707cc140a855.jar

@@ -8,4 +8,4 @@ tools:context="com.pes.mlab.newhealthcareapp.SYS_ONEActivity">
         android:title="Next"
         app:showAsAction="ifRoom"  />
 </menu>
-<!-- From: file:/C:/Users/Aamir%20Hasan/Documents/GitHub/HealthCareApp/app/src/main/res/menu/menu_sys__one.xml -->
+<!-- From: file:/F:/GitHub_Repo/HealthCareApp/app/src/main/res/menu/menu_sys__one.xml -->

@@ -71,7 +71,7 @@ public class MainActivity extends Activity {
 
     //To Add Schools and Students(Changing Intent to SchoolAdd Activity)
     public void ADD(View view) {
-        Intent intent = new Intent(this, AddActivity.class);
+        Intent intent = new Intent(this, SchoolAddActivity.class);
         startActivity(intent);
         //Transition Animation
         overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
@@ -153,7 +153,7 @@ public class MainActivity extends Activity {
                 Toast.makeText(getApplicationContext(), "No Entries found", Toast.LENGTH_LONG).show();
             }
         } else {
-            showMessage("Check Internert Connection", "Try again");
+            showMessage("Check Internet Connection", "Try again");
         }
     }
 
